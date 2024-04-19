@@ -23,7 +23,7 @@
                     <h1 class="fw-bold">JSK Store Dashboard</h1>
                     <h2 class="mt-4">Sign Up</h2>
                     <div class="error alert alert-danger"></div>
-                <div class="mt-4">
+                <div class="mt-5">
                     <div class="d-flex mt-3 gap-5">
                         <div>
                             <label for="firstname" class="mb-2 fw-semibold">First Name</label>
@@ -48,7 +48,7 @@
             </div>
         </form>
         <div>
-            <img src="./images/shoe.jpg" alt="" style="height: 100vh; border-top-left-radius: .75rem; border-bottom-left-radius: .75rem;">
+            <img src="./images/_50754327-1b51-4c0f-be3f-6011a26ab6cf.jpg" alt="" style="height: 100vh; border-top-left-radius: .75rem; border-bottom-left-radius: .75rem;">
         </div>
 </body>
 </html>
