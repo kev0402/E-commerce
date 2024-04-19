@@ -23,7 +23,7 @@
                     <h1 class="fw-bold">JSK Store Dashboard</h1>
                     <h2 class="mt-4">Sign Up</h2>
                     <div class="error alert alert-danger"></div>
-                <div>
+                <div class="mt-5">
                     <div class="d-flex mt-3 gap-5">
                         <div>
                             <label for="firstname" class="mb-2 fw-semibold">First Name</label>
