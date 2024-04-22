@@ -16,6 +16,72 @@
     <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="./styles/dashboard.css">
 </head>
+<?php
+    $firstname = $lastname = $email = $pass = $alert = null;
+
+    if (isset($_POST['signupButton'])) {
+        $firstname = $_POST['first-name'];
+        $lastname = $_POST['last-name'];
+        $email = $_POST['email'];
+        $pass = $_POST['pass'];
+        $pwd_hash = password_hash($pass, PASSWORD_DEFAULT);
+
+        if (empty($firstname)) {
+            $alert = "First Name cannot be empty!";
+        } elseif (!preg_match("/^[a-zA-Z-']*$/",$firstname)) {
+            $alert = "First Name must contain letters only!";
+        }
+
+        if (empty($lastname)) {
+            $alert = "Last Name cannot be empty!";
+        } elseif (!preg_match("/^[a-zA-Z-']*$/",$lastname)) {
+            $alert = "Last Name must contain letters only!";
+        }
+
+        if (empty($email)) {
+            $alert = "Email cannot be empty!";
+        } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            $alert = "Invalid Email format!";
+        }
+        if (empty(($pass))) {
+            $alert = "Password cannot be empty!";
+        } elseif (strlen($pass) < 8) {
+            $alert = "Password must have at least 8 characters long";
+        }
+
+        if (empty($firstname) && empty($lastname) && empty($email) && empty($pass)) {
+            $alert = "All fields cannot be empty!";
+        }
+        else {
+            $sql = "INSERT INTO accounts_tb(First_Name, Last_Name, Email, Password)
+                    VALUE (?, ?, ?, ?);";
+            $stmt = mysqli_stmt_init($conn);
+            $preparestmt = mysqli_stmt_prepare($stmt, $sql);
+
+            if ($preparestmt) {
+                mysqli_stmt_bind_param($stmt, "ssss", $firstname, $lastname, $email, $pwd_hash);
+                mysqli_stmt_execute($stmt);
+                header("Location: ./Dashboard.php");
+            } else {
+                die();
+            }
+        }
+    }
+
+    if ($alert != null) {
+        ?>
+            <style>
+                .signupAlert {
+                    display: block;
+                }
+                .passwordVisibility {
+                    top: 68.7%;
+                    left: 36.6%;
+                }
+            </style>
+        <?php
+    }
+?>
 <body>
     <main class="d-flex flex-row w-100">
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" class="d-flex flex-column justify-content-center align-items-center mt-4 w-100">
@@ -24,22 +90,22 @@
                     <img src="./images/logo.png" style="width: 5em;" alt="">
                     <h1 class="fw-bold">JSK Store Dashboard</h1>
                 </div>
-                    <h2 class="fw-semibold mt-4">Sign Up</h2>
-                    <div class="signupAlert alert alert-danger"></div>
-                <div class="mt-5">
+                    <h2 class="fw-bold mt-4">Sign Up</h2>
+                    <div class="signupAlert alert alert-danger mt-4"><?php echo $alert ?></div>
+                <div class="mt-4">
                     <div class="d-flex justify-content-between mt-3 gap-5">
                         <div>
                             <label for="firstname" class="mb-2 fw-semibold">First Name</label>
-                            <input name="full-name" value="" type="text" class="form-control shadow-none p-3 fw-medium" id="firstname">
+                            <input name="first-name" value="<?php echo $firstname ?>" type="text" class="form-control shadow-none p-3 fw-medium" id="firstname">
                         </div>
                         <div>
                             <label for="lastname" class="mb-2 fw-semibold">Last Name</label>
-                            <input name="full-name" value="" type="text" class="form-control shadow-none p-3 fw-medium" id="lastname">
+                            <input name="last-name" value="<?php echo $lastname ?>" type="text" class="form-control shadow-none p-3 fw-medium" id="lastname">
                         </div>
                     </div>
                     <div class="mt-4">
                         <label for="email" class="mb-2 fw-semibold">Email</label>
-                        <input name="email" value="" type="text" class="form-control shadow-none p-3 fw-medium" id="email">
+                        <input name="email" value="<?php echo $email ?>" type="text" class="form-control shadow-none p-3 fw-medium" id="email">
                     </div>
                     <div class="mt-4">
                         <label for="pass" class="mb-2 fw-semibold">Password</label>
@@ -52,7 +118,7 @@
             </div>
         </form>
         <div>
-            <img src="./images/_50754327-1b51-4c0f-be3f-6011a26ab6cf.jpg" alt="" style="height: 100vh; border-top-left-radius: .75rem; border-bottom-left-radius: .75rem;">
+            <img src="./images/blurry-gradient-haikei.png" alt="" style="height: 100vh; border-top-left-radius: .75rem; border-bottom-left-radius: .75rem;">
         </div>
 </body>
 <script src="./script/dashboard.js"></script>

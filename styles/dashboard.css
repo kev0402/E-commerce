@@ -7,7 +7,7 @@
 }
 /* Signup CSS */
 .signupAlert {
-    display: none;
+    display: block;
 }
 #firstname, #lastname, #email, #password {
     border: 2px solid rgba(0, 0, 0, 0.5);
