@@ -20,11 +20,14 @@
     <main class="d-flex flex-row w-100">
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" class="d-flex flex-column justify-content-center align-items-center mt-4 w-100">
             <div class="personalFields w-50">
+                <div class="d-flex align-items-center">
+                    <img src="./images/logo.png" style="width: 5em;" alt="">
                     <h1 class="fw-bold">JSK Store Dashboard</h1>
-                    <h2 class="mt-4">Sign Up</h2>
-                    <div class="error alert alert-danger"></div>
+                </div>
+                    <h2 class="fw-semibold mt-4">Sign Up</h2>
+                    <div class="signupAlert alert alert-danger"></div>
                 <div class="mt-5">
-                    <div class="d-flex mt-3 gap-5">
+                    <div class="d-flex justify-content-between mt-3 gap-5">
                         <div>
                             <label for="firstname" class="mb-2 fw-semibold">First Name</label>
                             <input name="full-name" value="" type="text" class="form-control shadow-none p-3 fw-medium" id="firstname">
@@ -40,15 +43,17 @@
                     </div>
                     <div class="mt-4">
                         <label for="pass" class="mb-2 fw-semibold">Password</label>
-                        <input name="pass" value="" type="password" class="form-control shadow-none p-3 fw-medium" id="password">
+                        <input name="pass" value="" type="password" class="passwordField form-control shadow-none p-3 fw-medium" id="password">
+                        <i class="passwordVisibility fa-solid fa-lg fa-eye-slash" id="passwordVisibility"></i> 
                     </div>
                 </div>
-                <button name="continueButton" class="btn btn-primary border border-0 rounded-pill w-100 mt-5 p-3" id="continueButton">Continue</button>
-                <p class="text-center fw-semibold link-offset-2 link-underline link-underline-opacity-0 mt-5">Already have an account? <a href="#" class="signup">Login</a></p>
+                <button name="signupButton" class="signupButton btn btn-danger border border-0 rounded-pill w-100 mt-5 p-3" id="signupButton">Signup</button>
+                <p class="text-center fw-semibold link-offset-2 link-underline link-underline-opacity-0 mt-5">Already have an account? <a href="#" class="loginLink">Login</a></p>
             </div>
         </form>
         <div>
             <img src="./images/_50754327-1b51-4c0f-be3f-6011a26ab6cf.jpg" alt="" style="height: 100vh; border-top-left-radius: .75rem; border-bottom-left-radius: .75rem;">
         </div>
 </body>
+<script src="./script/dashboard.js"></script>
 </html>

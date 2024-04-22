@@ -5,6 +5,32 @@
     padding: 0;
     box-sizing: border-box;
 }
-.alert {
+/* Signup CSS */
+.signupAlert {
     display: none;
+}
+#firstname, #lastname, #email, #password {
+    border: 2px solid rgba(0, 0, 0, 0.5);
+}
+#firstname:focus, #lastname:focus, #email:focus, #password:focus {
+    border: 2px solid rgb(0, 0, 0);
+}
+#password {
+    position: relative;
+}
+.passwordVisibility {
+    position: absolute;
+    cursor: pointer;
+    top: 65.7%;
+    left: 36.6%;
+}
+.signupButton {
+    background-color: #E7003B;
+}
+.signupButton:hover, .signupButton:active {
+    background-color: #F12845;
+}
+.loginLink {
+    color: #F12845;
+    text-decoration: none;
 }
