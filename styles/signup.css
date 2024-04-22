@@ -1,0 +1,100 @@
+* {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-optical-sizing: auto;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Signup CSS */
+
+.alert {
+    height: 3.5em;
+}
+.firstAlert {
+    display: none;
+}
+#username, #email, #fullname, #pass, #confirmPass {
+    border: 2px solid rgba(0, 0, 0, 0.5);
+}
+#username:focus, #email:focus, #fullname:focus {
+    border: 2px solid rgb(0, 0, 0);
+}
+.line {
+    text-align: center;
+    position: relative;
+}
+.line::before {
+    content: "";
+    display: block;
+    width: 175px;
+    height: 5px;
+    border-radius: 1em;
+    background-color: #FF9AA4;
+    position: absolute;
+    top: 38%;
+    z-index: -2;
+}
+.line::after {
+    content: "";
+    display: block;
+    width: 175px;
+    height: 5px;
+    border-radius: 1em;
+    background-color: #FF9AA4;
+    position: absolute;
+    top: 38%;
+    left: 65%;    
+    z-index: -2;
+}
+.line span {
+    background-color: #fff;
+}
+#continueButton, #signupButton {
+    background-color: #E7003B;
+}
+#continueButton:hover, #signupButton:hover {
+    background-color: #F12845;
+}
+.signup, .login {
+    color: #F12845;
+    text-decoration: none;
+}
+#fb, #google {
+    border: 2px solid #F12845;
+    width: 50%;
+}
+
+/* Create Password CSS */
+.passwordFields {
+    display: none;
+}
+.passAlert {
+    display: none;
+}
+#pass:focus, #confirmPass:focus {
+    border: 2px solid rgb(0, 0, 0);
+}
+.linebreaker {
+    margin-top: 100px;
+    border: 2px solid #FF9AA4;
+    border-radius: 1em;
+}
+.loggingIn {
+    margin-top: 100px;
+}
+#pass, #confirmPass {
+    position: relative;
+}
+.passwordIcon, .confirmpasswordIcon {
+    position: absolute;
+    cursor: pointer;
+}
+.passwordIcon {
+    top: 25.6%;
+    left: 84.5%;
+}
+.confirmpasswordIcon {
+    top: 38.3%;
+    left: 84.5%;
+}
+
