@@ -7,7 +7,7 @@
 }
 /* Signup CSS */
 .signupAlert {
-    display: block;
+    display: none;
 }
 #firstname, #lastname, #email, #password {
     border: 2px solid rgba(0, 0, 0, 0.5);
@@ -21,7 +21,7 @@
 .passwordVisibility {
     position: absolute;
     cursor: pointer;
-    top: 65.7%;
+    top: 64.4%;
     left: 36.6%;
 }
 .signupButton {

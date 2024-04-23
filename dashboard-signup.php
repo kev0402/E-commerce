@@ -26,33 +26,18 @@
         $pass = $_POST['pass'];
         $pwd_hash = password_hash($pass, PASSWORD_DEFAULT);
 
-        if (empty($firstname)) {
-            $alert = "First Name cannot be empty!";
+
+        if (empty($firstname) || empty($lastname) || empty($email) || empty($pass)) {
+            $alert = "All fields cannot be empty!";
         } elseif (!preg_match("/^[a-zA-Z-']*$/",$firstname)) {
             $alert = "First Name must contain letters only!";
-        }
-
-        if (empty($lastname)) {
-            $alert = "Last Name cannot be empty!";
         } elseif (!preg_match("/^[a-zA-Z-']*$/",$lastname)) {
             $alert = "Last Name must contain letters only!";
-        }
-
-        if (empty($email)) {
-            $alert = "Email cannot be empty!";
         } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             $alert = "Invalid Email format!";
-        }
-        if (empty(($pass))) {
-            $alert = "Password cannot be empty!";
         } elseif (strlen($pass) < 8) {
             $alert = "Password must have at least 8 characters long";
-        }
-
-        if (empty($firstname) && empty($lastname) && empty($email) && empty($pass)) {
-            $alert = "All fields cannot be empty!";
-        }
-        else {
+        } else {
             $sql = "INSERT INTO accounts_tb(First_Name, Last_Name, Email, Password)
                     VALUE (?, ?, ?, ?);";
             $stmt = mysqli_stmt_init($conn);
@@ -61,7 +46,7 @@
             if ($preparestmt) {
                 mysqli_stmt_bind_param($stmt, "ssss", $firstname, $lastname, $email, $pwd_hash);
                 mysqli_stmt_execute($stmt);
-                header("Location: ./Dashboard.php");
+                
             } else {
                 die();
             }
