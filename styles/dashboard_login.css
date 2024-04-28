@@ -5,14 +5,13 @@
     padding: 0;
     box-sizing: border-box;
 }
-/* Signup CSS */
-.signupAlert {
+.loginAlert {
     display: none;
 }
-#firstname, #lastname, #email, #password {
+#email, #password {
     border: 2px solid rgba(0, 0, 0, 0.5);
 }
-#firstname:focus, #lastname:focus, #email:focus, #password:focus {
+#email:focus, #password:focus {
     border: 2px solid rgb(0, 0, 0);
 }
 #password {
@@ -21,13 +20,13 @@
 .passwordVisibility {
     position: absolute;
     cursor: pointer;
-    top: 64.4%;
+    top: 59.4%;
     left: 36.6%;
 }
 .signupButton, .loginButton {
     background-color: #E7003B;
 }
-.signupButton:hover, .signupButton:active{
+.loginButton:hover, .loginButton:active {
     background-color: #F12845;
 }
 .signupLink {
