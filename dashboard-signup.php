@@ -105,6 +105,7 @@
         <div>
             <img src="./images/blurry-gradient-haikei.png" alt="" style="height: 100vh; border-top-left-radius: .75rem; border-bottom-left-radius: .75rem;">
         </div>
+    </main>
 </body>
 <script src="./script/dashboard.js"></script>
 </html>
