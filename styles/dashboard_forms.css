@@ -1,0 +1,59 @@
+* {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-optical-sizing: auto;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.loginAlert, .signupAlert {
+    display: none;
+}
+.signupButton, .loginButton {
+    background-color: #E7003B;
+}
+.signupButton:hover, .signupButton:active{
+    background-color: #F12845;
+}
+.loginLink, .signupLink {
+    color: #F12845;
+    text-decoration: none;
+}
+
+/* Forms */
+.emailField, .passwordField, .confirmPassField {
+    border: 2px solid rgba(0, 0, 0, 0.5);
+}
+.emailField:focus, .passwordField:focus, .confirmPassField:focus {
+    border: 2px solid rgb(0, 0, 0);
+}
+.passwordField, .confirmPassField {
+    position: relative;
+}
+/* Password Visibility */
+.signupPasswordVisibility, .signupConfirmPassVisibility, .loginPasswordVisibility {
+    position: absolute;
+    cursor: pointer;
+}
+#signupPasswordVisibility {
+    top: 51.9%;
+    left: 36.6%;
+}
+#signupConfirmPassVisibility {
+    top: 64.3%;
+    left: 36.6%;
+}
+#loginPasswordVisibility {
+    top: 59.4%;
+    left: 36.6%;
+}
+/* Login CSS */
+
+#email, #password {
+    border: 2px solid rgba(0, 0, 0, 0.5);
+}
+#email:focus, #password:focus {
+    border: 2px solid rgb(0, 0, 0);
+}
+#password {
+    position: relative;
+}

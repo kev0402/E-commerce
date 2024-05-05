@@ -9,19 +9,25 @@
 .signupAlert {
     display: none;
 }
-#firstname, #lastname, #email, #password {
+#email, #password, #confirmPass {
     border: 2px solid rgba(0, 0, 0, 0.5);
 }
-#firstname:focus, #lastname:focus, #email:focus, #password:focus {
+#email:focus, #password:focus, #confirmPass:focus {
     border: 2px solid rgb(0, 0, 0);
 }
-#password {
+#password, #confirmPass {
     position: relative;
 }
-.passwordVisibility {
+.passwordVisibility, .confirmpassVisibility {
     position: absolute;
     cursor: pointer;
-    top: 64.4%;
+}
+#passwordVisibility {
+    top: 51.9%;
+    left: 36.6%;
+}
+#confirmpassVisibility {
+    top: 64.3%;
     left: 36.6%;
 }
 .signupButton, .loginButton {
@@ -30,7 +36,7 @@
 .signupButton:hover, .signupButton:active{
     background-color: #F12845;
 }
-.signupLink {
+.loginLink {
     color: #F12845;
     text-decoration: none;
 }
