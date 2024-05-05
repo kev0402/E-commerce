@@ -47,7 +47,7 @@
             $alert = "All fields cannot be empty!";
         } 
         else {
-            $sql = "INSERT INTO accounts_tb(Email, Password)
+            $sql = "INSERT INTO administrators_tb(Email, Password)
                     VALUE (?, ?);";
             $stmt = mysqli_stmt_init($conn);
             $preparestmt = mysqli_stmt_prepare($stmt, $sql);
