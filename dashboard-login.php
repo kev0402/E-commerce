@@ -7,7 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard Login</title>
+    <title>Login</title>
     <link rel="icon" href="./images/logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -42,7 +42,7 @@
 
             if ($user) {
                 if (password_verify($pass, $user['Password'])) {
-                    header('');
+                    header("Location: ./Dashboard.php");
                     die();
                 } else {
                     $alert = "Password is incorrect!";
@@ -50,6 +50,19 @@
             } else {
                 $alert = "Email cannot be found!";
             }
+        }
+        if ($alert != null) {
+            ?>
+                <style>
+                    .loginAlert {
+                        display: block;
+                    }
+                    #loginPasswordVisibility {
+                        top: 63.7%;
+                        left: 36.6%;
+                    }
+                </style>
+            <?php
         }
 }
 ?>
@@ -62,7 +75,7 @@
                     <h1 class="fw-bold">JSK Store Dashboard</h1>
                 </div>
                     <h2 class="fw-bold mt-4">Log In</h2>
-                    <div class="loginAlert alert alert-danger mt-4"></div>
+                    <div class="loginAlert alert alert-danger mt-4"><?php echo $alert ?></div>
                     <div class="mt-5">
                         <label for="email" class="mb-2 fw-semibold">Email</label>
                         <input name="email" value="" type="text" class="emailField form-control shadow-none p-3 fw-medium" id="loginEmailField">
