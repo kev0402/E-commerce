@@ -95,4 +95,11 @@
     top: 50.8%;
     left: 84.5%;
 }
+#activeIndicator, #secondIndicator, #thirdIndicator {
+    height: 10px;
+    width: 40px;
+    border-radius: 12px;
+    background-color: #E7003B;
+}
+
 
