@@ -18,7 +18,7 @@ require_once('./includes/database-con.php');
     <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
 </head>
 <?php
-$fullname = $email = $pass = $confirmPass = $error = null;
+$email = $pass = $confirmPass = $error = null;
 
 if (isset($_POST['continueButton'])) {
     $email = $_POST['email'];
