@@ -1,0 +1,761 @@
+
+*,
+*::before,
+*::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'SF Pro Rounded Regular';
+    src: url("/Font/SF-Pro-Rounded-Regular.otf");
+}
+
+header{
+    position: fixed;
+    display: flex;
+    width: 100%;
+    z-index: 99;
+}
+
+.NavigationBar{
+    display: flex;
+    width: 100%;    
+    height: 75px;
+    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.25);
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 35px 0 35px;
+    background: #fff;
+}
+
+.NameLogo label{
+    font-weight: 700;
+}
+
+.NameLogo img{
+    height: 60px;
+    width: 60px;
+}
+
+#SearchInput{
+    width: 443px;
+    height: 40px;
+    background: #D9D9D9;
+    border-radius: 15px;
+}
+
+#HomePageSignUp{
+    border: 3px solid #E7003B;
+    background: rgba(231, 0, 59, 0.10);
+    color: #E7003B;
+}
+
+#HomePageLogIn{
+    background: linear-gradient(90deg, #E7003B 0%, #E7003B 100%);
+}
+
+.SearchContainer{
+    display: flex;
+    position: relative;
+    align-items: center;
+    height: 100%;
+}
+
+#SearchButton{
+    display: flex;
+    position: absolute;
+    right: 20px;
+    height: 20px;
+    width: 20px;
+}
+
+.NavigationBarIcons{
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+.NavigationBarIcons img{
+    height: 25px;
+    width: 25px;
+    cursor: pointer;
+}
+
+
+@keyframes fade-in {
+    0%{
+        opacity: 0;
+        transform: translateY(20px) scale(0.9);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateY(0px) scale(1);
+    }
+}
+
+.LogSignBtn{
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    gap: 10px;
+    
+}
+
+.LogSignBtn button{
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+  
+}
+
+.AccountMenu{
+    display: none;
+    height: 466px;
+    width: 341px;
+    position: absolute;
+    justify-content: center;
+    background: #F5F5F5;
+    z-index: 100;
+    border-radius: 15px;
+    top: 90px;
+    right: 32px;
+    animation: fade-in 0.5s;
+}
+
+.AccountContainer{
+    display: flex;
+    height: 78px;
+    width: 284px;
+    background: #FFF;
+    border-radius: 15px;
+    justify-content: space-evenly;
+    align-items: center;
+    position: absolute;
+    top: 30px;
+}
+
+#UserLogInName{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+#UserFullname{
+    font-size: 14px;
+    font-weight: 500;
+    color: #898A8D;
+}
+
+.AccountContainer .UserContainer{
+    display: flex;
+    flex-direction: row;
+    gap: 18px;
+    width: 200px;
+}
+
+.AccountContainer #UserProfile{
+    border-radius: 100%;
+    height: 50px;
+    width: 50px;
+}
+
+.AccountContainer .UserName{
+    display: flex;
+    flex-direction: column;
+}
+
+.AccountContainer #UserEditAccount{
+   font-size: 38px;
+}
+
+
+.AccountContainer2{
+    display: flex;
+    flex-direction: column;
+    height: 188px;
+    gap: 30px;
+    width: 284px;
+    background: #FFF;
+    border-radius: 15px;
+    position: absolute;
+    bottom: 140px;
+    align-items: center;
+    justify-content: center;
+}
+
+.AccountContainer2 div{
+    display: flex;
+    flex-direction: row;
+    width: 233px;
+    gap: 20px;
+    font-size: 18px;
+    font-weight: 500;
+    align-items: center;
+}
+
+.AccountContainer2 div img{
+ height: 21px;
+ width: 24px;
+
+}
+
+#LogOutBtn{
+    background: #E7003B;
+    border-radius: 15px;
+    font-size: 18px;
+    font-weight: 500;
+    border: none;
+    color: #fff;
+    height: 52px;
+    width: 284px;
+    display: flex;
+    position: absolute;
+    bottom: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.HomePagePromo{
+    display: flex;
+    padding-top: 90px;
+}
+
+
+.Trending{
+    height: 528px;
+    width: 1092px;
+    margin-right: 1%;
+    border-radius: 10px;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+}
+.Trending .TrendingImageList{ 
+    position: absolute;
+    height: 100%;
+    left: 0;
+    top: 0;
+    display: flex;
+    transition: 1s;
+}
+.Trending .TrendingImageList img{
+    width: 1092px;
+    height: 100%;
+    object-fit: cover;
+}
+.Trending .buttons{
+    position: absolute;
+    top: 45%;
+    left: 5%;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    display: none;
+}
+.Trending .buttons button{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #fff5;
+    color: #fff;
+    border: none;
+    font-family: monospace;
+    font-weight: bold;
+}
+.Trending .dots{
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    color: #fff;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+.Trending .dots li{
+    align-self: center;
+    list-style: none;
+    background: #ffffff;
+    height: 12px;
+    width: 24px;
+    border-radius: 30px;
+    margin: 5px;
+    border-radius: 20px;
+    transition: 0.5s;
+}
+.Trending .dots li.auto{
+    background: #E7003B;
+    height: 18px;
+    width: 40px;
+    border-radius: 30px;
+}
+
+.Categories{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-self: center;
+    justify-content: center;
+    width: 1092px;
+    margin-top: 2%;
+}
+
+.CategoriesName h1{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+
+.CategoryRow{
+    width: 866px;
+    flex-direction: row;
+    align-self: center;
+    overflow: hidden;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    scroll-padding:  0 24px;
+   
+}
+
+.CategoryRow::-webkit-scrollbar-track {       
+    background-color: transparent;
+}
+
+.CategoryRow::-webkit-scrollbar {
+    background-color: transparent;
+
+}
+
+.ExtendedCategories{
+    display: flex;
+    align-self: center;
+    gap: 104px;
+}
+
+.CategoryContainer{
+    flex-direction: row;
+    scroll-snap-align: start;
+}
+
+.CategoryLeftButton{
+    display: none;
+}
+
+.CategoryImage{
+    display: flex;
+    align-items: center;   
+    justify-content: center;
+    height: 90px;
+    width: 90px;
+
+    
+    
+}
+
+
+.C{
+    text-align: center;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.CategoryRightButton{
+    display: none;
+}
+
+.PopularNow{
+    display: flex;
+    align-self: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 438px;
+    position: relative;
+}
+
+.PopularClothes{
+    display: flex;
+    height: 275px;
+    width: 1092px;
+    overflow: hidden;
+    overflow-x: scroll;
+    scroll-snap-type:x mandatory;
+    scroll-padding:  0 24px;
+}
+
+
+.PopularName h1{
+    margin-left: 1%;
+    font-size: 20px;
+    font-weight: 600;
+
+}
+
+.PopularClothes::-webkit-scrollbar-track {       
+    background-color: transparent;
+}
+
+.PopularClothes::-webkit-scrollbar {
+    background-color: transparent;
+
+}
+
+
+.PopularFlexWidth{
+    display: flex;
+}
+
+.ExtendedPopular{
+    display: flex;
+    justify-content: center;
+    width: 1092px;
+    gap: 104px;
+    position: absolute;
+}
+
+.PopularContainer{
+    height: 275px;
+    width: 190px;
+    border-radius: 20px;
+    flex-direction: row;
+    scroll-snap-align: start;
+    background: #FFF;
+    box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.25);
+
+}
+
+.PopularImage{
+    display: flex;
+    height: 210px;
+    justify-content: center;
+
+}
+
+.PopularIMG{
+    height: 173px;
+    width: 136px;
+    align-self: center;
+}
+
+.PopularInfo{
+    display: flex;
+    flex-direction: row;
+    
+
+}
+
+.PopularDetails{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    font-weight: 600;
+}
+
+.PopularButton button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    font-size: 16px;
+    font-weight: 800;
+    height: 32px;
+    width: 32px;
+    background: var(--secondary-color-cta, #E7003B);
+    border: #E7003B;
+}
+
+.DiscoverContainer{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-self: center;
+    justify-content: center;
+    width: 100%
+}
+
+.DiscoverLabel{
+    margin-left: 1%;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.DiscoverAd{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-self: center;
+    justify-content: center;
+    width: 1092px;
+    
+}
+
+.Discover{
+    height: 428px;
+    width: 792px;
+    margin-right: 1%;
+    border-radius: 10px;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+}
+.Discover .DiscoverImageList{ 
+    position: absolute;
+    height: 100%;
+    left: 0;
+    top: 0;
+    display: flex;
+    transition: 1s;
+}
+.Discover .DiscoverImageList img{
+    width: 792px;
+    height: 100%;
+    object-fit: cover;
+}
+.Discover .buttons{
+    position: absolute;
+    top: 45%;
+    left: 5%;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    display: none;
+}
+.Discover .buttons button{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #fff5;
+    color: #fff;
+    border: none;
+    font-family: monospace;
+    font-weight: bold;
+}
+.Discover .dots{
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    color: #fff;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+.Discover .dots li{
+    align-self: center;
+    list-style: none;
+    background: #ffffff;
+    height: 12px;
+    width: 24px;
+    border-radius: 30px;
+    margin: 5px;
+    border-radius: 20px;
+    transition: 0.5s;
+}
+.Discover .dots li.auto{
+    background: #E7003B;
+    height: 18px;
+    width: 40px;
+    border-radius: 30px;
+}
+
+.NewArrival{
+    display: flex;
+    align-self: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 438px;
+    position: relative;
+}
+
+.NewArrivalClothes{
+    display: flex;
+    height: 275px;
+    width: 1092px;
+    overflow: hidden;
+    overflow-x: scroll;
+    scroll-snap-type:x mandatory;
+    scroll-padding:  0 24px;
+}
+
+.NewArrivalName h1{
+    margin-left: 1%;
+    font-size: 20px;
+    font-weight: 600;
+
+}
+
+.NewArrivalClothes::-webkit-scrollbar-track {       
+    background-color: transparent;
+}
+
+.NewArrivalClothes::-webkit-scrollbar {
+    background-color: transparent;
+
+}
+
+
+.ExtendedNewArrivalIMG{
+    display: flex;
+    justify-content: center;
+    width: 1092px;
+    gap: 104px;
+    position: absolute;
+}
+
+
+.NewArrivalContainer{
+    height: 275px;
+    width: 190px;
+    border-radius: 20px;
+    flex-direction: row;
+    scroll-snap-align: start;
+    background: #FFF;
+    box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.25);
+    margin-bottom: 20px;
+}
+
+.NewArrivalImage{
+    display: flex;
+    height: 210px;
+    justify-content: center;
+    
+}
+
+.NewArrivalIMG{
+    height: 143px;
+    width: 136px;
+    align-self: center;
+}
+
+.NewArrivalInfo{
+    display: flex;
+    flex-direction: row;
+    
+
+}
+
+.NewArrivalDetails{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    font-weight: 600;
+}
+
+
+.NewArrivalButton{
+
+    width: 30%;
+    display: flex;
+    justify-content: center ;
+}
+
+.NewArrivalButton button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    font-size: 16px;
+    font-weight: 800;
+    height: 32px;
+    width: 32px;
+    background: var(--secondary-color-cta, #E7003B);
+    border: #E7003B;
+}
+
+.HomePageFooter{
+    display: flex;
+    height: 423px;
+    width: 100%;
+    background: #FF9AA4;
+    position: relative;
+
+}
+
+.Newsletter{
+    display: flex;
+    flex-direction: column;
+    height: 50%;
+    gap: 20px;
+    position: absolute;
+    left: 60px;
+    top: 80px;
+}
+
+.Newsletter label{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+#SubscribeInput{
+    height: 51px;
+    width: 354px;
+    border-radius: 10px;
+    border: 2px solid #00000050;
+}
+
+.Subscibe{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 26px;
+}
+
+#SubscribeBtn{
+    background: #E7003B;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 500;
+    border: none;
+    color: #fff;
+    width: 138px;
+
+}
+
+.PlatformIcons{
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+    width: 100%;
+}
+
+.ServiceAndDetails{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    position: absolute;
+    right:500px;
+    top: 80px;
+}
+
+.CustomerService{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.MoreDetails{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.FooterTitles{
+    font-size: 19px;
+    font-weight: 600;
+}
+
+.Copyright{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    position: absolute;
+    bottom: 10px;
+}
+
+.Copyright label{
+    font-size: 20px;
+    font-weight: 600;
+}
