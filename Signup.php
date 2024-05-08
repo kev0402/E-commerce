@@ -138,7 +138,7 @@ if ($error != null) {
                             </svg>Facebook</button>
                     </div>
                     <div class=" mt-5">
-                        <p class="text-center fw-semibold">Already have an account <a href="#" class="login"> Log In</a></p>
+                        <p class="text-center fw-semibold">Already have an account <a href="./Login.php" class="login"> Log In</a></p>
                     </div>
                 </div>
             </div>
