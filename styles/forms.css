@@ -48,10 +48,10 @@
 .line span {
     background-color: #fff;
 }
-#continueButton, #signupButton {
+#continueButton, #signupButton, #loginButton {
     background-color: #E7003B;
 }
-#continueButton:hover, #signupButton:hover {
+#continueButton:hover, #signupButton:hover, #loginButton:hover {
     background-color: #F12845;
 }
 .signup, .login {
@@ -83,7 +83,7 @@
 #pass, #confirmPass {
     position: relative;
 }
-.passwordIcon, .confirmpasswordIcon {
+.passwordIcon, .confirmpasswordIcon, .loginPasswordIcon {
     position: absolute;
     cursor: pointer;
 }
@@ -93,6 +93,10 @@
 }
 .confirmpasswordIcon {
     top: 50.8%;
+    left: 84.5%;
+}
+.loginPasswordIcon {
+    top: 44.6%;
     left: 84.5%;
 }
 #activeIndicator, #secondIndicator, #thirdIndicator {

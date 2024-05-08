@@ -1,9 +1,13 @@
+<?php
+    session_start();
+    require_once('./includes/database-con.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login</title>
     <link rel="icon" href="./images/logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,6 +16,56 @@
     <link rel="stylesheet" href="./styles/forms.css">
     <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
 </head>
+<?php
+    $email = $pass = $alert = null;
+
+    if (isset($_POST['loginButton'])) {
+        $email = $_POST['email'];
+        $pass = $_POST['pass_word'];
+
+        if (empty($email)) {
+            $alert = "Email cannot be empty!";
+        } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            $alert = "Invalid email format!";
+        }
+
+        if (empty($pass)) {
+            $alert = "Password cannot be empty!";
+        }
+
+        if (empty($email) && empty($pass)) {
+            $alert = "All fields cannot be empty!";
+        } else {
+            $sql = "SELECT * FROM customer_tb WHERE Email = '$email'; ";
+            $result = mysqli_query($conn, $sql);
+            $user = mysqli_fetch_array($result, MYSQLI_ASSOC);
+    
+            if ($user) {
+                if (password_verify($pass, $user['Password'])) {
+                    header("Location: ./HomePage.php");
+                    die();
+                } else {
+                    $alert = "Password is incorrect!";
+                }
+            } else {
+                $alert = "Email cannot be found!";
+            }
+        }
+
+        if ($alert != null) {
+            ?>
+                <style>
+                    .firstAlert {
+                        display: block;
+                    }
+                    .loginPasswordIcon {
+                        top: 48.5%;
+                    }
+                </style>
+            <?php
+            }
+    }
+?>
 <body>
 <main class="d-flex flex-row h-auto">
         <div id="carousel" class="carousel slide w-50" data-bs-ride="carousel">
@@ -34,9 +88,9 @@
         </div>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" class="d-flex flex-column justify-content-center align-items-center mt-4 w-100">
             <div class="w-50">
-                <h1 class="fw-bold">Login</h1>
-                <p class="fw-medium">Please fill out all required details</p>
-                <div class="firstAlert alert alert-danger"><?php echo $error ?></div>
+                <h1 class="fw-bold">Logging In</h1>
+                <p class="fw-medium">Please fill out your email and password</p>
+                <div class="firstAlert alert alert-danger"><?php echo $alert ?></div>
                 <div>
                     <div class="mt-4">
                         <label for="email" class="mb-2 fw-semibold">Email</label>
@@ -45,11 +99,11 @@
                     <div class="mt-4">
                         <label for="pass" class="mb-2 fw-semibold">Password</label>
                         <input name="pass_word" type="password" class="form-control shadow-none p-3 fw-medium" id="pass">
-                        <i class="passwordIcon fa-solid fa-lg fa-eye-slash" id="passVisibility"></i>
+                        <i class="loginPasswordIcon fa-solid fa-lg fa-eye-slash" id="passVisibility"></i>
                     </div>
                 </div>
                 <div>
-                    <button name="continueButton" class="btn btn-primary border border-0 rounded-pill w-100 mt-5 p-3" id="continueButton">Continue</button>
+                    <button name="loginButton" class="btn btn-primary border border-0 rounded-pill w-100 mt-5 p-3" id="loginButton">Login</button>
                     <div>
                         <p class="line mt-5 fw-semibold"><span>or Signup with</span></p>
                     </div>

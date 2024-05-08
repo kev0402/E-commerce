@@ -4,7 +4,6 @@ require_once('./includes/database-con.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -52,6 +51,7 @@ if (isset($_POST['continueButton'])) {
         if ($prepareStmt) {
             mysqli_stmt_bind_param($stmt, "ss", $email, $passHash);
             mysqli_stmt_execute($stmt);
+            header("Location: ./Login.php");
         }
     }
 }
