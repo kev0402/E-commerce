@@ -20,16 +20,16 @@
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" class="d-flex flex-column justify-content-center align-items-center mt-4 w-100">
             <div class="w-50">
                 <h1 class="fw-bold mb-3">Forgot Password</h1>
-                <p class="fw-medium mb-4">Please enter the email address you’d like your password reset information sent to </p>
+                <p class="fw-medium mb-4">Please enter the code that has been sent to your email address</p>
                 <div class="firstAlert alert alert-danger"><?php echo $alert ?></div>
                 <div>
                     <div>
-                        <label for="email" class="mb-3 fw-semibold">Email</label>
+                        <label for="email" class="mb-3 fw-semibold">Code</label>
                         <input name="email" value="" type="text" class="form-control shadow-none p-3 fw-medium" id="email">
                     </div>
                 </div>
                 <div>
-                    <button name="loginButton" class="btn btn-primary border border-0 rounded-pill w-100 mt-5 p-3" id="loginButton">Continue</button>
+                    <a name="submitButton" href="./Login.php" class="btn btn-primary border border-0 rounded-pill w-100 mt-5 p-3" id="submitButton">Submit</a>
                 </div>
             </div>
         </form>

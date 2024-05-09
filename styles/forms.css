@@ -48,10 +48,10 @@
 .line span {
     background-color: #fff;
 }
-#continueButton, #signupButton, #loginButton {
+#continueButton, #signupButton, #loginButton, #submitButton {
     background-color: #E7003B;
 }
-#continueButton:hover, #signupButton:hover, #loginButton:hover {
+#continueButton:hover, #signupButton:hover, #loginButton:hover, #submitButton:hover {
     background-color: #F12845;
 }
 .signup, .login, .forgotPass {
