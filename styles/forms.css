@@ -54,7 +54,7 @@
 #continueButton:hover, #signupButton:hover, #loginButton:hover {
     background-color: #F12845;
 }
-.signup, .login {
+.signup, .login, .forgotPass {
     color: #F12845;
     text-decoration: none;
 }
@@ -96,7 +96,7 @@
     left: 84.5%;
 }
 .loginPasswordIcon {
-    top: 44.6%;
+    top: 41.6%;
     left: 84.5%;
 }
 #activeIndicator, #secondIndicator, #thirdIndicator {
@@ -105,5 +105,12 @@
     border-radius: 12px;
     background-color: #E7003B;
 }
-
+#flexCheckDefault {
+    box-shadow: none;
+    outline: none;
+}
+#flexCheckDefault:checked {
+    background-color: #E7003B;
+    border-style: none;
+}
 

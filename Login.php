@@ -1,9 +1,14 @@
 <?php
-    session_start();
-    require_once('./includes/database-con.php');
+session_start();
+require_once('./includes/database-con.php');
+
+if (isset($_SESSION['user'])) {
+    header('Location: ./HomePage.php');
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,57 +22,60 @@
     <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
 </head>
 <?php
-    $email = $pass = $alert = null;
+$email = $pass = $alert = null;
 
-    if (isset($_POST['loginButton'])) {
-        $email = $_POST['email'];
-        $pass = $_POST['pass_word'];
+if (isset($_POST['loginButton'])) {
+    $email = $_POST['email'];
+    $pass = $_POST['pass_word'];
 
-        if (empty($email)) {
-            $alert = "Email cannot be empty!";
-        } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            $alert = "Invalid email format!";
-        }
-
-        if (empty($pass)) {
-            $alert = "Password cannot be empty!";
-        }
-
-        if (empty($email) && empty($pass)) {
-            $alert = "All fields cannot be empty!";
-        } else {
-            $sql = "SELECT * FROM customer_tb WHERE Email = '$email'; ";
-            $result = mysqli_query($conn, $sql);
-            $user = mysqli_fetch_array($result, MYSQLI_ASSOC);
-    
-            if ($user) {
-                if (password_verify($pass, $user['Password'])) {
-                    header("Location: ./HomePage.php");
-                    die();
-                } else {
-                    $alert = "Password is incorrect!";
-                }
-            } else {
-                $alert = "Email cannot be found!";
-            }
-        }
-
-        if ($alert != null) {
-            ?>
-                <style>
-                    .firstAlert {
-                        display: block;
-                    }
-                    .loginPasswordIcon {
-                        top: 48.5%;
-                    }
-                </style>
-            <?php
-            }
+    if (empty($email)) {
+        $alert = "Email cannot be empty!";
+    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $alert = "Invalid email format!";
     }
+
+    if (empty($pass)) {
+        $alert = "Password cannot be empty!";
+    }
+
+    if (empty($email) && empty($pass)) {
+        $alert = "All fields cannot be empty!";
+    } else {
+        $sql = "SELECT * FROM customer_tb WHERE Email = '$email'; ";
+        $result = mysqli_query($conn, $sql);
+        $user = mysqli_fetch_array($result, MYSQLI_ASSOC);
+
+        if ($user) {
+            if (password_verify($pass, $user['Password'])) {
+                $_SESSION["user"] = "valid";
+                header("Location: ./HomePage.php");
+                die();
+            } else {
+                $alert = "Password is incorrect!";
+            }
+        } else {
+            $alert = "Email cannot be found!";
+        }
+    }
+
+    if ($alert != null) {
 ?>
+        <style>
+            .firstAlert {
+                display: block;
+            }
+
+            .loginPasswordIcon {
+                top: 48.5%;
+            }
+        </style>
+<?php
+    }
+}
+?>
+
 <body>
-<main class="d-flex flex-row h-auto">
+    <main class="d-flex flex-row h-auto">
         <div id="carousel" class="carousel slide w-50" data-bs-ride="carousel">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active activeIndicator" id="activeIndicator" aria-current="true" aria-label="Slide 1"></button>
@@ -92,7 +100,7 @@
                 <p class="fw-medium">Please fill out your email and password</p>
                 <div class="firstAlert alert alert-danger"><?php echo $alert ?></div>
                 <div>
-                    <div class="mt-4">
+                    <div>
                         <label for="email" class="mb-2 fw-semibold">Email</label>
                         <input name="email" value="" type="text" class="form-control shadow-none p-3 fw-medium" id="email">
                     </div>
@@ -102,13 +110,20 @@
                         <i class="loginPasswordIcon fa-solid fa-lg fa-eye-slash" id="passVisibility"></i>
                     </div>
                 </div>
+                <div class="d-flex align-items-center justify-content-between mt-4">
+                    <div class="form-check">
+                        <input class="form-check-input p-2" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label ms-1 fw-semibold" for="flexCheckDefault">Remember Me</label>
+                    </div>
+                    <a class="forgotPass fw-semibold" href="./forgotPassword.php">Forgot Password</a>
+                </div>
                 <div>
                     <button name="loginButton" class="btn btn-primary border border-0 rounded-pill w-100 mt-5 p-3" id="loginButton">Login</button>
                     <div>
                         <p class="line mt-5 fw-semibold"><span>or Signup with</span></p>
                     </div>
                     <div class="d-flex justify-content-around mt-5 gap-4">
-                        <button class="google btn d-flex align-items-center justify-content-center px-4 py-3 gap-3 rounded-3 fw-semibold" id="google" >
+                        <button class="google btn d-flex align-items-center justify-content-center px-4 py-3 gap-3 rounded-3 fw-semibold" id="google">
                             <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 0 48 48">
                                 <path fill="#FFC107" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24c0,11.045,8.955,20,20,20c11.045,0,20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"></path>
                                 <path fill="#FF3D00" d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"></path>
@@ -127,8 +142,9 @@
                 </div>
             </div>
         </form>
-    </main>    
+    </main>
 </body>
 <script src="./bootstrap/js/bootstrap.min.js"></script>
 <script src="./script/signup.js"></script>
+
 </html>

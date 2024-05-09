@@ -11,6 +11,7 @@ let BoxContainer = document.querySelectorAll('.Trending .dots li');
 let TrendingLengthItems = TrendingItems.length - 1;
 let TrendingAuto = 0;
 
+
 TrendingNext.onclick = function(){
     if(TrendingAuto + 1 > TrendingLengthItems){
         TrendingAuto = 0;
