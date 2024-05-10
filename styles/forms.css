@@ -54,7 +54,7 @@
 #continueButton:hover, #signupButton:hover, #loginButton:hover, #submitButton:hover {
     background-color: #F12845;
 }
-.signup, .login, .forgotPass {
+.signup, .login, .forgotPass, .resendCode {
     color: #F12845;
     text-decoration: none;
 }

@@ -15,18 +15,19 @@
 <body>
 <main class="d-flex flex-row h-auto">
         <div id="carousel" class="carousel slide w-50" data-bs-ride="carousel">
-            <img src="./images/blurry-gradient-haikei.png" alt="" style="height: 100vh; border-top-left-radius: .75rem; border-bottom-left-radius: .75rem;">
+            <img src="./images/blurry-gradient-haikei.png" alt="" style="height: 100vh; border-top-right-radius: .75rem; border-bottom-right-radius: .75rem;">
         </div>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" class="d-flex flex-column justify-content-center align-items-center mt-4 w-100">
             <div class="w-50">
-                <h1 class="fw-bold mb-3">Forgot Password</h1>
+                <h1 class="fw-bold mb-3">Forgot Password?</h1>
                 <p class="fw-medium mb-4">Please enter the code that has been sent to your email address</p>
                 <div class="firstAlert alert alert-danger"><?php echo $alert ?></div>
                 <div>
-                    <div>
+                    <div class="mb-3">
                         <label for="email" class="mb-3 fw-semibold">Code</label>
                         <input name="email" value="" type="text" class="form-control shadow-none p-3 fw-medium" id="email">
                     </div>
+                    <a href="3" class="resendCode fw-semibold">Resend Code</a>
                 </div>
                 <div>
                     <a name="submitButton" href="./Login.php" class="btn btn-primary border border-0 rounded-pill w-100 mt-5 p-3" id="submitButton">Submit</a>
