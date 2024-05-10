@@ -307,7 +307,6 @@ header{
     font-weight: 600;
 }
 
-
 .CategoryRow{
     width: 866px;
     flex-direction: row;
@@ -347,14 +346,10 @@ header{
     display: flex;
     align-items: center;   
     justify-content: center;
-    height: 90px;
-    width: 90px;
-
-    
-    
+    height: auto;
+    object-fit: cover;
+    width: 200px;
 }
-
-
 .C{
     text-align: center;
     font-size: 18px;
@@ -715,11 +710,7 @@ header{
 
 .PlatformIcons{
     display: flex;
-    flex-direction: row;
-    gap: 25px;
-    width: 100%;
 }
-
 .ServiceAndDetails{
     display: flex;
     flex-direction: row;
