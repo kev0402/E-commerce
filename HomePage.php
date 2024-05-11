@@ -1,8 +1,11 @@
 <?php
+    include("./connection.php");
 session_start();
 if (!isset($_SESSION['user'])) {
     header("Location: ./Login.php");
 }
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,7 +24,7 @@ if (!isset($_SESSION['user'])) {
     <script src="./JS/bootstrap.min.js"></script>
     <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="./CSS/bootstrap.css">
-    <link rel="stylesheet" href="./styles/HomePage.css">
+    <link rel="stylesheet" href="./CSS/HomePage.css">
     <title>Home Page</title>
     <link rel="icon" href="./images/logo.png">
 </head>
@@ -182,14 +185,27 @@ if (!isset($_SESSION['user'])) {
             <div class="PopularClothes">
                 <div class="PopularFlexWidth">
                     <div class="ExtendedPopular">
+
+                      <?php
+
+                            $count = 0;
+
+                            $var = mysqli_query($conn, "SELECT * FROM products;");
+                            while ($row = mysqli_fetch_assoc($var)) {
+                                $count += 1;
+                                if($count == 4){
+                                    break;
+                            }
+                            ?>
+
                         <div class="PopularContainer" id="ProductLongSleeves">
                             <div class="PopularImage">
-                                <img src="./Image/LongSleeve/stripes21.jpg" alt="" class="PopularIMG">
+                            <img src="./Image/Dashboard/AddProduct Image/<?php echo $row["Product_Image"] ?>" alt="" class="PopularIMG">
                             </div>
                             <div class="PopularInfo">
                                 <div class="PopularDetails">
-                                    <label for="" class="ClothesName px-3">Long Sleeves</label>
-                                    <label for="" class="ClothesPrice px-3">₱799</label>
+                                    <label for="" class="ClothesName px-3"><?php echo $row["Product_Name"] ?></label>
+                                    <label for="" class="ClothesPrice px-3">₱<?php echo $row["Regular_Price"] ?></label>
                                 </div>
                                 <div class="PopularButton">
                                     <div class="ButtonCenter">
@@ -198,38 +214,15 @@ if (!isset($_SESSION['user'])) {
                                 </div>
                             </div>
                         </div>
-                        <div class="PopularContainer " id="ProductShoes">
-                            <div class="PopularImage">
-                                <img src="./Image/SHoes/ballarbare_shoes 1 1.png" alt="" class="PopularIMG">
-                            </div>
-                            <div class="PopularInfo">
-                                <div class="PopularDetails">
-                                    <label for="" class="ClothesName px-3">Shoes</label>
-                                    <label for="" class="ClothesPrice px-3">₱2,499</label>
-                                </div>
-                                <div class="PopularButton">
-                                    <div class="ButtonCenter">
-                                        <button class="btn btn-primary"><i class="fa-solid fa-plus"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="PopularContainer" id="ProductJean">
-                            <div class="PopularImage">
-                                <img src="./Image/AdsImage/a262f50ded2c64964632e6864b199484.png" alt="" class="PopularIMG">
-                            </div>
-                            <div class="PopularInfo">
-                                <div class="PopularDetails">
-                                    <label for="" class="ClothesName px-3">Jeans</label>
-                                    <label for="" class="ClothesPrice px-3">₱899</label>
-                                </div>
-                                <div class="PopularButton">
-                                    <div class="ButtonCenter">
-                                        <button class="btn btn-primary"><i class="fa-solid fa-plus"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+
+                                                       <?php
+
+                            }
+
+
+
+                            ?>
+
                     </div>
                 </div>
             </div>
@@ -282,15 +275,28 @@ if (!isset($_SESSION['user'])) {
             <div class="NewArrivalClothes">
                 <div class="NewArrivalFlexWidth">
                     <div class="ExtendedNewArrivalIMG">
+
+                         <?php
+
+                            $count2 = 0;
+
+                            $var2 = mysqli_query($conn, "SELECT * FROM products ORDER BY Product_ID DESC");
+                            while ($row2 = mysqli_fetch_assoc($var2)) {
+                                $count2 += 1;
+                                if($count2 == 4){
+                                    break;
+                            }
+                            ?>
+
                         <div class="NewArrivalContainer" id="ProductSlacks">
                             <div class="NewArrivalImage">
-                                <img src="./Image/AdsImage/86fae2bc3ed73dd981cfc9427d96faed.png" alt="" class="NewArrivalIMG">
+                            <img src="./Image/Dashboard/AddProduct Image/<?php echo $row2["Product_Image"] ?>" alt="" class="NewArrivalIMG">
                             </div>
                             <div class="NewArrivalInfo">
                                 <div class="NewArrivalDetails">
-                                    <label for="" class="ClothesName px-3">Slacks</label>
+                                    <label for="" class="ClothesName px-3"><?php echo $row2["Product_Name"] ?></label>
 
-                                    <label for="" class="ClothesPrice px-3">₱1,999</label>
+                                    <label for="" class="ClothesPrice px-3">₱<?php echo $row2["Regular_Price"] ?></label>
                                 </div>
                                 <div class="NewArrivalButton">
                                     <div class="ButtonCenter">
@@ -299,38 +305,15 @@ if (!isset($_SESSION['user'])) {
                                 </div>
                             </div>
                         </div>
-                        <div class="NewArrivalContainer " id="ProductPoloShirt">
-                            <div class="NewArrivalImage">
-                                <img src="./Image/AdsImage/tur1.png" alt="" class="NewArrivalIMG">
-                            </div>
-                            <div class="NewArrivalInfo">
-                                <div class="NewArrivalDetails">
-                                    <label for="" class="ClothesName px-3">Polo Shirt</label>
-                                    <label for="" class="ClothesPrice px-3">₱949</label>
-                                </div>
-                                <div class="NewArrivalButton">
-                                    <div class="ButtonCenter">
-                                        <button class="btn btn-primary"><i class="fa-solid fa-plus"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="NewArrivalContainer" id="ProductDress">
-                            <div class="NewArrivalImage">
-                                <img src="./Image/AdsImage/0fc32ffd34a4856ef1297c59a54f52cb.jpg" alt="" class="NewArrivalIMG">
-                            </div>
-                            <div class="NewArrivalInfo">
-                                <div class="NewArrivalDetails">
-                                    <label for="" class="ClothesName px-3">Dress</label>
-                                    <label for="" class="ClothesPrice px-3">₱1,499</label>
-                                </div>
-                                <div class="NewArrivalButton">
-                                    <div class="ButtonCenter">
-                                        <button class="btn btn-primary"><i class="fa-solid fa-plus"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+
+                                                                               <?php
+
+                            }
+
+
+
+                            ?>
+
                     </div>
                 </div>
             </div>

@@ -454,6 +454,10 @@ header{
     font-weight: 600;
 }
 
+.ClothesName{
+font-size:15px;
+}
+
 .PopularButton button{
     display: flex;
     justify-content: center;

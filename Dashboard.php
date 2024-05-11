@@ -12,7 +12,7 @@
     <script src="./JS/bootstrap.min.js"></script>
     <link rel="stylesheet" href="./CSS/bootstrap.min.css">
     <link rel="stylesheet" href="./CSS/bootstrap.css">
-    <link rel="stylesheet" href="./CSS/Dashboard.css">
+    <link rel="stylesheet" href="./CSS/MainDashboard.css">
     <title>Dashboard</title>
 </head>
 
@@ -1261,6 +1261,6 @@
 
 </body>
 
-<script type="text/javascript" src="./JS/MainDashboard.js"></script>
+<script type="text/javascript" src="./JS/Dashboard.js"></script>
 
 </html>
