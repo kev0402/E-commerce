@@ -1,6 +1,10 @@
 <?php
-session_start();
-require_once('./includes/database-con.php');
+    session_start();
+    require_once('./includes/database-con.php');
+    
+    if (isset($_SESSION['user'])) {
+        header('Location: ./HomePage.php');
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -43,6 +47,7 @@ if (isset($_POST['loginButton'])) {
         if ($user) {
             if (password_verify($pass, $user['Password'])) {
                 header("Location: ./Dashboard.php");
+                $_SESSION["user"] = "valid";
                 die();
             } else {
                 $alert = "Password is incorrect!";

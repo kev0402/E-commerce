@@ -15,7 +15,7 @@
 #username, #email, #fullname, #pass, #confirmPass {
     border: 2px solid rgba(0, 0, 0, 0.5);
 }
-#username:focus, #email:focus, #fullname:focus {
+#username:focus, #email:focus {
     border: 2px solid rgb(0, 0, 0);
 }
 .line {
@@ -48,13 +48,13 @@
 .line span {
     background-color: #fff;
 }
-#continueButton, #signupButton {
+#continueButton, #signupButton, #loginButton, #submitButton {
     background-color: #E7003B;
 }
-#continueButton:hover, #signupButton:hover {
+#continueButton:hover, #signupButton:hover, #loginButton:hover, #submitButton:hover {
     background-color: #F12845;
 }
-.signup, .login {
+.signup, .login, .forgotPass, .resendCode {
     color: #F12845;
     text-decoration: none;
 }
@@ -83,7 +83,7 @@
 #pass, #confirmPass {
     position: relative;
 }
-.passwordIcon, .confirmpasswordIcon {
+.passwordIcon, .confirmpasswordIcon, .loginPasswordIcon {
     position: absolute;
     cursor: pointer;
 }
@@ -95,11 +95,22 @@
     top: 50.8%;
     left: 84.5%;
 }
+.loginPasswordIcon {
+    top: 41.6%;
+    left: 84.5%;
+}
 #activeIndicator, #secondIndicator, #thirdIndicator {
     height: 10px;
     width: 40px;
     border-radius: 12px;
     background-color: #E7003B;
 }
-
+#flexCheckDefault {
+    box-shadow: none;
+    outline: none;
+}
+#flexCheckDefault:checked {
+    background-color: #E7003B;
+    border-style: none;
+}
 
