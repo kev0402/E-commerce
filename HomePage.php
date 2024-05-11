@@ -23,6 +23,7 @@ if (!isset($_SESSION['user'])) {
     <link rel="stylesheet" href="./CSS/bootstrap.css">
     <link rel="stylesheet" href="./styles/HomePage.css">
     <title>Home Page</title>
+    <link rel="icon" href="./images/logo.png">
 </head>
 
 <body>
@@ -51,23 +52,23 @@ if (!isset($_SESSION['user'])) {
                         <label for="" id="UserFullname">The Goat</label>
                     </div>
                 </div>
-                <i class="fas fa-chevron-right" id="UserEditAccount"></i>
+                <i class="fa-solid fa-chevron-right" id="UserEditAccount"></i>
             </div>
             <div class="AccountContainer2">
                 <div class="MyOrder">
-                    <img src="./Image/HomePageAccIcon/MyOrderIcon.png" alt="">
-                    <label for="">My Orders</label>
+                    <i class="fa-solid fa-clock-rotate-left fa-lg"></i>
+                    <label for="" class="fw-semibold">My Orders</label>
                 </div>
                 <div class="MyFavorites">
-                    <img src="./Image/HomePageAccIcon/FavoriteIcon.png" alt="">
-                    <label for="">My Favorites</label>
+                    <i class="fa-solid fa-heart fa-lg"></i>
+                    <label for="" class="fw-semibold">My Favorites</label>
                 </div>
                 <div class="Settings">
-                    <img src="./Image/HomePageAccIcon/SettingIcon.png" alt="">
-                    <label for="">Settings</label>
+                    <i class="fa-solid fa-gear fa-lg"></i>
+                    <label for="" class="fw-semibold">Settings</label>
                 </div>
             </div>
-            <button onclick="redirect()" id="LogOutBtn">Log Out </button>
+            <button onclick="redirect()" id="LogOutBtn" class="fw-bold">Log Out</button>
             <script>
                 function redirect() {
                     window.location.href = "./includes/log-out.php";
@@ -102,7 +103,7 @@ if (!isset($_SESSION['user'])) {
     </div>
     <div class="Categories container-fluid">
         <div class="CategoriesName my-3 ">
-            <h1>Categories</h1>
+            <h1 class="fw-bold mb-4">Categories</h1>
         </div>
         <div class="CategoryRow">
             <div class="CategoryButtonCenter">
@@ -176,7 +177,7 @@ if (!isset($_SESSION['user'])) {
     <div class="PopularNow container-fluid">
         <div class="PopularRow">
             <div class="PopularName my-5">
-                <h1>Popular</h1>
+                <h1 class="fw-bold">Popular</h1>
             </div>
             <div class="PopularClothes">
                 <div class="PopularFlexWidth">
@@ -237,7 +238,7 @@ if (!isset($_SESSION['user'])) {
     <div class="DiscoverContainer">
         <div class="DiscoverAd">
             <div class="DiscoverLabel my-4 ">
-                <label>Discover</label>
+                <label class="fw-bold">Discover</label>
             </div>
         </div>
         <div class="Discover container-fluid">
@@ -276,7 +277,7 @@ if (!isset($_SESSION['user'])) {
     <div class="NewArrival container-fluid">
         <div class="NewArrivalRow my-5">
             <div class="NewArrivalName my-3">
-                <h1>NewArrival</h1>
+                <h1 class="fw-bold mb-4">New Arrival</h1>
             </div>
             <div class="NewArrivalClothes">
                 <div class="NewArrivalFlexWidth">
@@ -339,7 +340,7 @@ if (!isset($_SESSION['user'])) {
         <div class="Newsletter">
             <label for="" class="fw-bold">Sign up our Newsletter</label>
             <div class="Subscibe">
-                <input type="text" id="SubscribeInput" class="form-control">
+                <input type="text" id="SubscribeInput" class="form-control shadow-none">
                 <button id="SubscribeBtn">Subscribe</button>
             </div>
             <div class="PlatformIcons gap-4">
@@ -350,20 +351,20 @@ if (!isset($_SESSION['user'])) {
         </div>
         <div class="ServiceAndDetails">
             <div class="CustomerService">
-                <label for="" class="FooterTitles fw-bold">Customer Service</label>
-                <label for="" class="">Delivery & Return</label>
-                <label for="">Customer Service</label>
-                <label for="">Track Order</label>
+                <label for="" class="FooterTitles fw-bold mb-3">Customer Service</label>
+                <label for="" class="fw-medium">Delivery & Return</label>
+                <label for="" class="fw-medium">Customer Service</label>
+                <label for="" class="fw-medium">Track Order</label>
             </div>
             <div class="MoreDetails">
-                <label for="" class="FooterTitles fw-bold">More Details</label>
-                <label for="">Terms & Condition</label>
-                <label for="">Privacy Policy</label>
-                <label for="">Products info</label>
+                <label for="" class="FooterTitles fw-bold mb-3">More Details</label>
+                <label for="" class="fw-medium">Terms & Condition</label>
+                <label for="" class="fw-medium">Privacy Policy</label>
+                <label for="" class="fw-medium">Products info</label>
             </div>
         </div>
         <div class="Copyright">
-            <label for="">&copy; JSK Store. All rights reserved</label>
+            <label for="" class="fw-bold">&copy; JSK Store. All rights reserved</label>
         </div>
     </div>
 </body>

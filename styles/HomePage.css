@@ -41,6 +41,10 @@ header{
     outline: 1px solid #868383;
     border-radius: 10px;
 }
+#SearchInput:focus, #SubscribeInput:focus {
+    border: 1px solid rgb(0, 0, 0);
+    box-shadow: none;
+}
 
 #HomePageSignUp{
     border: 3px solid #E7003B;
@@ -62,6 +66,7 @@ header{
 #SearchButton{
     display: flex;
     position: absolute;
+    cursor: pointer;
     right: 20px;
     height: 20px;
     width: 20px;
@@ -165,7 +170,7 @@ header{
     flex-direction: column;
 }
 
-.AccountContainer #UserEditAccount{
+.AccountContainer {
    font-size: 38px;
 }
 
@@ -203,8 +208,7 @@ header{
 #LogOutBtn{
     background: #E7003B;
     border-radius: 15px;
-    font-size: 18px;
-    font-weight: 500;
+    font-size: 16px;
     border: none;
     color: #fff;
     height: 52px;
@@ -214,6 +218,9 @@ header{
     bottom: 20px;
     justify-content: center;
     align-items: center;
+}
+#LogOutBtn:hover {
+    background-color: #F12845;
 }
 
 .HomePagePromo{
@@ -640,7 +647,6 @@ header{
 
 
 .NewArrivalButton{
-
     width: 30%;
     display: flex;
     justify-content: center ;
@@ -684,27 +690,26 @@ header{
 }
 
 #SubscribeInput{
-    height: 51px;
-    width: 354px;
+    height: 50px;
     border-radius: 10px;
-    border: 2px solid #00000050;
+    border: 1px solid #00000050;
 }
 
 .Subscibe{
     display: flex;
     flex-direction: row;
     width: 100%;
-    gap: 26px;
+    gap: 20px;
 }
 
 #SubscribeBtn{
     background: #E7003B;
-    border-radius: 20px;
-    font-size: 13px;
+    border-radius: 15px;
+    font-size: 14px;
     font-weight: 500;
     border: none;
     color: #fff;
-    width: 138px;
+    width: 200px;
 
 }
 
@@ -714,7 +719,7 @@ header{
 .ServiceAndDetails{
     display: flex;
     flex-direction: row;
-    gap: 30px;
+    gap: 100px;
     position: absolute;
     right:500px;
     top: 80px;

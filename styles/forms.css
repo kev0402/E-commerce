@@ -15,7 +15,7 @@
 #username, #email, #fullname, #pass, #confirmPass {
     border: 2px solid rgba(0, 0, 0, 0.5);
 }
-#username:focus, #email:focus, #fullname:focus {
+#username:focus, #email:focus {
     border: 2px solid rgb(0, 0, 0);
 }
 .line {
