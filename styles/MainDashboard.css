@@ -1,0 +1,804 @@
+*,
+*::before,
+*::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'SF Pro Rounded Regular';
+    src: url("/Font/SF-Pro-Rounded-Regular.otf");
+}
+
+.DashboardContainer{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+}
+
+.Sidebar{
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    height: 100%;
+    background: #FFFFFF;
+    align-items: center;
+    position: fixed;
+}
+
+.NameLogo{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-right: 18px;
+    height: 85px;
+    width: 100%;
+    gap: 2px;
+}
+
+.NameLogo label{
+    font-weight: 700;
+    font-size: 27px;
+}
+
+.NameLogo img{
+    height: 70px;
+    width: 70px;
+}
+
+.SideBarIcons{
+    display: flex;
+    flex-direction: column;
+    height: 85%;
+    top: 100px;
+    width: 225px;
+    gap: 40px;
+    position: absolute;
+}
+
+.Menu{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    height: 190px;
+}
+
+.Menu2{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    height: 150px;
+}
+
+.IconName{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: black;
+    gap: 18px;
+    height: 40px;
+    width: 100%;
+    padding-left: 15px ;
+    border-radius: 10px;
+    transition: .5s;
+    background: none;
+}
+
+.IconName:hover{
+    background: #FFCFD4;
+    cursor: pointer;
+}
+
+#MainDashboardIcon{
+    background: #FFCFD4;
+    cursor: pointer;
+}
+
+#MainDashboardIcon:hover{
+    background: #FFCFD4;
+    cursor: pointer;
+}
+
+#AddProductIcon:hover{
+    background: #FFCFD4;
+    cursor: pointer;
+}
+
+.IconName img{
+    height: 22px;
+    width: 24px;
+}
+
+.IconName label{
+    font-size: 15px;
+}
+
+.MainPage{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    height: auto;
+    width: 80%;
+
+}
+
+header{
+    display: flex;
+    position: fixed;
+    width: 80%;
+    z-index: 99;
+}
+
+.NavigationBar{
+    display: flex;
+    width: 100%;    
+    height: 85px;
+    /* box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.25); */
+  justify-content: center;
+    align-items: center;
+    padding: 0 35px 0 35px;
+    background: #FFFFFF;
+}
+
+#SearchInput{
+    width: 443px;
+    height: 40px;
+    background: #FFF;
+    border: 1px solid #0000005a;
+    border-radius: 10px;
+}
+
+.SearchContainer{
+    display: flex;
+    position: relative;
+    align-items: center;
+    height: 100%;
+}
+
+#SearchButton{
+    display: flex;
+    position: absolute;
+    right: 20px;
+    height: 20px;
+    width: 20px;
+}
+
+.NavigationBarIcons{
+    display: flex;
+    position: absolute;
+    right: 35px;
+    align-items: center;
+    justify-content: center;
+    gap: 27px;
+
+}
+
+.NavigationBarIcons img{
+    height: 25px;
+    width: 23px;
+    cursor: pointer;
+}
+
+.AdminAccount{
+    display: flex;
+    flex-direction: row;
+    align-items:center ;
+    justify-content: center;
+}
+
+.AdminAccount img{
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+
+}
+
+
+/* -------------------------------------------------------     Main Dashboard     --------------------------------------------------- */
+
+
+.MainDashboard{
+    display: flex;
+    position: absolute;
+    width: 100%;
+    top: 85px;
+    flex-direction: column;
+    align-items: center;
+    height: 1150px;
+    background: #F5F5F5;
+}
+
+#DashboardLabel{
+    display: flex;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.MainContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: absolute;
+    top: 90px;
+    width: 95%;
+    height: 888px;
+}
+
+.Container1{
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 414px;
+
+}
+
+.SubContainer1{
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    top: 0;
+    width: 60%;
+    height: 182px;
+    justify-content: space-between;
+}
+
+.SalesContainer{
+    display: flex;
+    flex-direction: column ;
+    height: 100%;
+    width: 341px;
+    background-color: #FFFFFF;
+}
+
+.RevenueContainer{
+    display: flex;
+    flex-direction: column ;
+    height: 100%;
+    width: 341px;
+    background-color: #FFFFFF;
+}
+
+.SubContainer2{
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    bottom: 0;
+    width: 60%;
+    height: 182px;
+    justify-content: space-between;
+}
+
+.CustomerContainer{
+    display: flex;
+    flex-direction: column ;
+    height: 100%;
+    width: 341px;
+    background-color: #FFFFFF;
+}
+
+.OrdersContainer{
+    display: flex;
+    flex-direction: column ;
+    height: 100%;
+    width: 341px;
+    background-color: #FFFFFF;
+}
+
+.SubContainer3{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 0;
+    width: 35%;
+    height: 100%;
+    background-color: #FFFFFF;
+}
+
+.Container2{
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 418px;
+    width: 100%;
+}
+
+.ResentOrderContainer{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    height: 100%;
+    background-color: #FFFFFF;
+}
+
+.RecentCustomerContainer{
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+    height: 100%;
+    background-color: #FFFFFF;
+}
+
+.footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: absolute;
+    border-top: .5px solid #2323212d ;
+    bottom: 0;
+    width: 95%;
+    height: 60px;
+    align-items: center;
+}
+
+.About{
+    display: flex;
+    flex-direction: row;
+
+    gap: 20px;
+}
+
+
+/* -------------------------------------------------------     ADD Product     --------------------------------------------------- */
+
+
+.MainAddProduct{
+    display: none;
+    position: absolute;
+    width: 100%;
+    top: 85px;
+    flex-direction: column;
+    align-items: center;
+    height: 1150px;
+    background: #F5F5F5;
+}
+
+
+#AddProductLabel{
+    display: flex;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.AddProductMainContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: absolute;
+    top: 90px;
+    width: 95%;
+    height: 1000px;
+    background-color: #FFFFFF;
+    padding: 4%;
+}
+
+.ProductDescription{
+    display: flex;
+    height: 100%;
+    width: 45%;
+    flex-direction: column;
+    gap: 20px ;
+}
+
+.ProductContainer{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    gap: 10px;
+}
+
+#ProductName{
+    border: 2px solid #00000050;
+    background: #F8F8F8;
+    width: 100%;
+    height: 48px;
+    border-radius: 10px;
+}
+
+#ProductDescription{
+    border: 2px solid #00000050;
+    background: #F8F8F8;
+    width: 100%;
+    height: 275px;
+    border-radius: 10px;
+}
+
+#Category{
+    border: 2px solid #00000050;
+    background: #F8F8F8;
+    width: 100%;
+    height: 48px;
+    border-radius: 10px;
+}
+
+.IDStockPrices{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.IDPrice{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    gap: 10px;
+    width: 47%;
+}
+
+.StockPrice{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    gap: 10px;
+    width: 47%;
+}
+
+#ProductID{
+    border: 2px solid #00000050;
+    background: #F8F8F8;
+    width: 100%;
+    height: 48px;
+    border-radius: 10px;
+}
+
+#RegularPrice{
+    border: 2px solid #00000050;
+    background: #F8F8F8;
+    width: 100%;
+    height: 48px;
+    border-radius: 10px;
+}
+
+#Stock{
+    border: 2px solid #00000050;
+    background: #F8F8F8;
+    width: 100%;
+    height: 48px;
+    border-radius: 10px;
+}
+
+#SalesPrice{
+    border: 2px solid #00000050;
+    background: #F8F8F8;
+    width: 100%;
+    height: 48px;
+    border-radius: 10px;
+}
+
+#Alert{
+    display: flex;
+    position: fixed;
+    top: 100px;
+    right: 430px;
+    align-self: center;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 100;
+}
+
+.ProductImage{
+    display: flex;
+    height: 100%;
+    width: 45%;
+    flex-direction: column;
+    gap: 20px ;
+    position: relative;
+}
+
+#DisplayImage{
+    height: 411px;
+    width: 1005;
+}
+
+#UploadFile{
+    display: none;
+}
+
+#UploadFunction{
+display: flex;
+flex-direction: column;
+gap: 18px;
+align-items: center;
+justify-content: center;
+height:  167px;
+Width: 100%;
+Border-radius: 8px;
+Border: 1px dashed #232321;
+color: black;
+font-size: 14px;
+font-weight: 500;
+transition: .5s;
+}
+
+.uploadletter{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.SubmitButton{
+    display: flex;
+    flex-direction: row;
+    right: 0;
+    height: auto;
+    gap: 20px;
+    position: absolute;
+    bottom: 0;
+}
+
+#AddProductSubmitBtn{
+    border: transparent;
+    width: 179px;
+    height: 53px;
+    border-radius: 48px;
+    background-color: #E7003B;
+    color: #FFFFFF;
+}
+
+#AddProduvtCancelBtn{
+    border: 3px solid #E7003B;
+    width: 179px;
+    height: 53px;
+    border-radius: 48px;
+    color: #E7003B;
+}
+
+
+/* -------------------------------------------------------     Product List     --------------------------------------------------- */
+
+
+.MainProductList{
+    display: none;
+    position: absolute;
+    width: 100%;
+    top: 85px;
+    flex-direction: column;
+    align-items: center;
+    height: 1150px;
+    background: #F5F5F5;
+}
+
+
+#ProductList{
+    display: flex;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.ProductListMainContainer{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 90px;
+    width: 95%;
+    height: 1000px;
+    background-color: #FFFFFF;
+    padding: 4%;
+}
+
+.ListOfProductLabels{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    width: 100%;
+    height: 50px;
+    border-bottom: 1px solid #DBDADE;
+}
+
+.ListOfProducts{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    width: 100%;
+    height: 100px;
+}
+
+.ListContainer{
+    display: flex;
+    height: 100%;
+    width: 12%;
+    justify-content: center;
+    align-items: center;
+}
+
+.ListColumn{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 100%;
+    width: 100%;
+}
+
+.ListContainer img{
+    height: 80%;
+    width: 80%;
+}
+
+.Command{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    gap: 20px;
+}
+
+#EditProduct{
+    height: 24px;
+    width: 24px;
+}
+
+#DeleteProduct{
+    height: 24px;
+    width: 24px;
+}
+
+#confirm{
+    border-radius: 21px;
+    border:1px solid rgba(240, 247, 255, 0.36);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+
+/* -------------------------------------------------------     Edit Product     --------------------------------------------------- */
+
+
+
+.MainEditProduct{
+    display: none;
+    position: absolute;
+    width: 100%;
+    top: 85px;
+    flex-direction: column;
+    align-items: center;
+    height: 1150px;
+    background: #F5F5F5;
+}
+
+
+#EditProductLabel{
+    display: flex;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.EditProductMainContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: absolute;
+    top: 90px;
+    width: 95%;
+    height: 1000px;
+    background-color: #FFFFFF;
+    padding: 4%;
+}
+
+.EditBtn{
+    background: transparent;
+    border: none;
+}
+
+#EditProductName{
+    border: 2px solid #00000050;
+    background: #F8F8F8;
+    width: 100%;
+    height: 48px;
+    border-radius: 10px;
+}
+
+#EditProductDescription{
+    border: 2px solid #00000050;
+    background: #F8F8F8;
+    width: 100%;
+    height: 275px;
+    border-radius: 10px;
+}
+
+#EditCategory{
+    border: 2px solid #00000050;
+    background: #F8F8F8;
+    width: 100%;
+    height: 48px;
+    border-radius: 10px;
+}
+
+
+#EditProductID{
+    border: 2px solid #00000050;
+    background: #F8F8F8;
+    width: 100%;
+    height: 48px;
+    border-radius: 10px;
+}
+
+#EditRegularPrice{
+    border: 2px solid #00000050;
+    background: #F8F8F8;
+    width: 100%;
+    height: 48px;
+    border-radius: 10px;
+}
+
+#EditStock{
+    border: 2px solid #00000050;
+    background: #F8F8F8;
+    width: 100%;
+    height: 48px;
+    border-radius: 10px;
+}
+
+#EditSalesPrice{
+    border: 2px solid #00000050;
+    background: #F8F8F8;
+    width: 100%;
+    height: 48px;
+    border-radius: 10px;
+}
+
+
+#EditDisplayImage{
+    height: 411px;
+    width: 1005;
+}
+
+#EditUploadFile{
+    display: none;
+}
+
+#EditUploadFunction{
+display: flex;
+flex-direction: column;
+gap: 18px;
+align-items: center;
+justify-content: center;
+height:  167px;
+Width: 100%;
+Border-radius: 8px;
+Border: 1px dashed #232321;
+color: black;
+font-size: 14px;
+font-weight: 500;
+transition: .5s;
+}
+
+
+#EditProductSubmitBtn{
+    color: #FFFFFF;
+    border: transparent;
+    width: 179px;
+    height: 53px;
+    border-radius: 48px;
+    background: #E7003B;
+
+}
+
+#EditProduvtCancelBtn{
+    border: 3px solid #E7003B;
+    width: 179px;
+    height: 53px;
+    border-radius: 48px;
+    color: #E7003B;
+}
