@@ -19,9 +19,7 @@
 <body>
 
     <?php
-
     include("./connection.php");
-
     session_start();
 
     $ProductName = $ProductDescription = $Category = $RegularPrice = $Stock = "";

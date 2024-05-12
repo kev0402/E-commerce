@@ -47,7 +47,7 @@ if (isset($_POST['loginButton'])) {
 
         if ($user) {
             if (password_verify($pass, $user['Password'])) {
-                $_SESSION["user"] = "valid";
+                $_SESSION["user"];
                 header("Location: ./HomePage.php");
                 die();
             } else {
