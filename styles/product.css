@@ -12,6 +12,7 @@ header {
     display: flex;
     width: 100%;
     z-index: 99;
+    top: 0;
 }
 
 .NavigationBar {
@@ -222,17 +223,19 @@ header {
 
 /* Product CSS / Main CSS */
 main {
-    height: 100vh;
+    height: 100%;
 }
 .productInfo {
     margin-top: 10em;
 }
-
+.fav {
+    cursor: pointer;
+}
 .qty-input {
     display: flex;
 	align-items: center;
 	overflow: hidden;
-    background-color: #898a8d;
+    background-color: #d5dbe6;
 }
 .product-qty, .qty-count {
 	background: transparent;
@@ -275,6 +278,15 @@ input::-webkit-inner-spin-button {
 }
 #cartButton:hover {
     background-color: #F12845;
+}
+#inlineRadio1, #inlineRadio2, #inlineRadio3 {
+    box-shadow: none;
+    outline: none;
+    border: 1px solid #868383;
+}    
+#inlineRadio1:checked, #inlineRadio2:checked, #inlineRadio3:checked  {
+    background-color: #E7003B;
+    outline: none;
 }
 
 .productpageFooter{
