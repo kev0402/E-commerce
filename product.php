@@ -1,3 +1,17 @@
+<?php
+    include("./connection.php");
+session_start();
+// if (!isset($_SESSION['user'])) {
+//     header("Location: ./Login.php");
+// }
+
+$ID =   $_SESSION['ID'];
+
+if(isset($_POST['LogoBtn'])){
+    header("Location: ./HomePage.php");
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,18 +26,22 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
     <script src="./script/jquery.min.js"></script>
     <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./styles/product.css">
+    <link rel="stylesheet" href="./CSS/product.css">
     <link rel="icon" href="./images/logo.png">
     <title>Product</title>
 </head>
 
 <body>
+<form action="" method="post" enctype="multipart/form-data">
     <header>
+
         <div class="NavigationBar">
+            <button class="LogoBtn" name="LogoBtn">
             <div class="NameLogo">
                 <img src="./images/logo.png" alt="">
                 <label for="">JSK Store</label>
             </div>
+            </button>
             <div class="SearchContainer">
                 <input type="text" placeholder="Search..." class="form-control" id="SearchInput">
                 <i class="fa-solid fa-magnifying-glass" id="SearchButton"></i>
@@ -68,13 +86,22 @@
         </div>
     </header>
     <main class="d-flex flex-column justify-content-center align-items-center">
+
         <div class="productInfo d-flex flex-row mb-5 gap-5">
+
+        <?php
+
+$var = mysqli_query($conn, "SELECT * FROM products WHERE Product_ID = $ID");
+while ($row = mysqli_fetch_assoc($var)) {
+
+?>
+
             <div class="">
-                <img src="https://placehold.co/500x500/EEE/31343C" width="500" height="500" alt="Placehold" class="header-image">
+                <img src="./Image/Dashboard/AddProduct Image/<?php echo $row["Product_Image"] ?>" width="500" height="500" alt="Placehold" class="header-image">
             </div>
             <div class="">
                 <div class="productName d-flex flex-row align-items-center justify-content-between">
-                    <h1 class="fw-bold fs-2">Product Name</h1>
+                    <h1 class="fw-bold fs-2"><?php echo $row["Product_Name"] ?></h1>
                     <i class="fav fa-solid fa-heart fa-xl" style="color: #989ea9;"></i>
                 </div>
                 <div class="reviews d-flex flex-row align-items-center  mt-2 gap-3">
@@ -90,7 +117,7 @@
                     </div>
                 </div>
                 <div class="productPrice mt-4">
-                    <h2 class="fw-bold">₱799</h2>
+                    <h2 class="fw-bold">₱<?php echo $row["Regular_Price"] ?></h2>
                 </div>
                 <div class="sizePicker mt-4 d-flex flex-row align-items-center">
                     <label for="sizes" class="fw-semibold me-4 fs-3">Size:</label>
@@ -145,9 +172,18 @@
         <div class="description w-50">
             <div class="desc my-5">
                 <h3 class="fw-bold">Description</h3>
-                <p class="mt-4" style="text-align: justify;">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis, adipisci molestiae! Eos vero quidem reiciendis vitae consequatur soluta aliquam, nesciunt repellendus, qui, corrupti facilis esse iste numquam? Aspernatur sed labore inventore, error accusantium sit, provident placeat voluptates officia repudiandae laudantium consequatur! Corrupti iste harum perspiciatis sint quos quis deleniti. Totam facere id animi quia explicabo! Blanditiis, vero expedita voluptatem minus molestias pariatur nulla voluptatum optio officiis dignissimos maiores quaerat animi ducimus obcaecati laudantium mollitia labore rem. Aliquid consectetur quaerat quasi quae praesentium officia nulla alias officiis numquam. Recusandae sed, adipisci rem excepturi hic fuga deserunt, ipsa ipsam, repudiandae ducimus repellendus.</p>
+                <p class="mt-4" style="text-align: justify;"><?php echo $row["Product_Description"] ?></p>
             </div>
         </div>
+
+        
+        <?php
+
+}
+
+
+
+?>
         <div class="mt-5 w-50">
             <div>
                 <h3 class="fw-bold">Reviews</h3>
@@ -247,7 +283,8 @@
             <label for="" class="fw-bold">&copy; JSK Store. All rights reserved</label>
         </div>
     </footer>
+</form>
 </body>
-<script src="./script/product.js"></script>
+<script src="./JS/product.js"></script>
 
 </html>

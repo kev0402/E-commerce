@@ -1,0 +1,675 @@
+
+*,
+*::before,
+*::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+header{
+    position: fixed;
+    top: 0;
+    display: flex;
+    width: 100%;
+    z-index: 99;
+}
+
+.NavigationBar{
+    display: flex;
+    width: 100%;    
+    height: 75px;
+    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.25);
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 35px 0 35px;
+    background: #fff;
+}
+
+.NameLogo label{
+    font-weight: 700;
+}
+
+.NameLogo img{
+    height: 60px;
+    width: 60px;
+}
+
+#SearchInput{
+    width: 443px;
+    height: 40px;
+    outline: 1px solid #868383;
+    border-radius: 10px;
+}
+#SearchInput:focus, #SubscribeInput:focus {
+    border: 1px solid rgb(0, 0, 0);
+    box-shadow: none;
+}
+
+#HomePageSignUp{
+    border: 3px solid #E7003B;
+    background: rgba(231, 0, 59, 0.10);
+    color: #E7003B;
+}
+
+#HomePageLogIn{
+    background: linear-gradient(90deg, #E7003B 0%, #E7003B 100%);
+}
+
+.SearchContainer{
+    display: flex;
+    position: relative;
+    align-items: center;
+    height: 100%;
+}
+
+#SearchButton{
+    display: flex;
+    position: absolute;
+    cursor: pointer;
+    right: 20px;
+    height: 20px;
+    width: 20px;
+}
+
+.NavigationBarIcons{
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+.NavigationBarIcons img{
+    height: 25px;
+    width: 25px;
+    cursor: pointer;
+}
+
+
+@keyframes fade-in {
+    0%{
+        opacity: 0;
+        transform: translateY(20px) scale(0.9);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateY(0px) scale(1);
+    }
+}
+
+.LogSignBtn{
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    gap: 10px;
+    
+}
+
+.LogSignBtn button{
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+  
+}
+
+.AccountMenu{
+    display: none;
+    height: 466px;
+    width: 341px;
+    position: absolute;
+    justify-content: center;
+    background: #F5F5F5;
+    z-index: 100;
+    border-radius: 15px;
+    top: 90px;
+    right: 32px;
+    animation: fade-in 0.5s;
+}
+
+.AccountContainer{
+    display: flex;
+    height: 78px;
+    width: 284px;
+    background: #FFF;
+    border-radius: 15px;
+    justify-content: space-evenly;
+    align-items: center;
+    position: absolute;
+    top: 30px;
+}
+
+#UserLogInName{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+#UserFullname{
+    font-size: 14px;
+    font-weight: 500;
+    color: #898A8D;
+}
+
+.AccountContainer .UserContainer{
+    display: flex;
+    flex-direction: row;
+    gap: 18px;
+    width: 200px;
+}
+
+.AccountContainer #UserProfile{
+    border-radius: 100%;
+    height: 50px;
+    width: 50px;
+}
+
+.AccountContainer .UserName{
+    display: flex;
+    flex-direction: column;
+}
+
+.AccountContainer {
+   font-size: 38px;
+}
+
+
+.AccountContainer2{
+    display: flex;
+    flex-direction: column;
+    height: 188px;
+    gap: 30px;
+    width: 284px;
+    background: #FFF;
+    border-radius: 15px;
+    position: absolute;
+    bottom: 140px;
+    align-items: center;
+    justify-content: center;
+}
+
+.AccountContainer2 div{
+    display: flex;
+    flex-direction: row;
+    width: 233px;
+    gap: 20px;
+    font-size: 18px;
+    font-weight: 500;
+    align-items: center;
+}
+
+.AccountContainer2 div img{
+ height: 21px;
+ width: 24px;
+
+}
+
+#LogOutBtn{
+    background: #E7003B;
+    border-radius: 15px;
+    font-size: 16px;
+    border: none;
+    color: #fff;
+    height: 52px;
+    width: 284px;
+    display: flex;
+    position: absolute;
+    bottom: 20px;
+    justify-content: center;
+    align-items: center;
+}
+#LogOutBtn:hover {
+    background-color: #F12845;
+}
+
+/* -------------------------------------------------------     Main body   --------------------------------------------------- */
+
+.MainBody{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 1584px;
+    position: relative;
+    background: #FAFAFA;
+}
+
+
+/* -------------------------------------------------------     User Checkout Info    --------------------------------------------------- */
+
+
+.UserCheckoutInfo{
+    display: flex;
+    flex-direction: column;
+    height: 220px;
+    width: 634px;
+    position: absolute;
+    gap: 20px;
+    top: 150px;
+    left: 130px;
+
+}
+
+.UserCheckoutInfo label{
+    font-size: 35px;
+    font-weight: 500;
+}
+
+.UserInfoContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 180px;
+    width: 100%;
+    background: #FFFFFF;
+    position: relative;
+    border-radius: 8px;
+}
+
+.userInfo{
+    display: flex;
+    flex-direction: column;
+    height: 65%;
+    width: 90%;
+    gap: 10px;
+    position: relative;
+
+}
+
+.editbtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    height: 44px;
+    width: 42px;
+    right: 33px;
+    top: 27px;
+    border: none;
+    background: #E7003B;
+    border-radius: 10px;
+}
+
+.editbtn img{
+    height: 20px;
+    width: 20px;
+}
+
+.NameNumber{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+
+.NameNumber label{
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.userInfo label{
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.HomeBtn{
+    height: 30px;
+    width: 53px;
+    background: #FFFFFF;
+    border: 1px solid #E7003B;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+
+/* -------------------------------------------------------     Packages    --------------------------------------------------- */
+
+
+
+.PackagesCheckoutInfo{
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    overflow-y: auto;
+    height: 600px;
+    width: 634px;
+    position: absolute;
+    gap: 20px;
+    top: 450px;
+    left: 130px;
+
+}
+
+.PackagesCheckoutInfo label{
+    font-size: 35px;
+    font-weight: 500;
+}
+
+.PackageContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 264px;
+    width: 100%;
+    background: #FFFFFF;
+    position: relative;
+    border-radius: 8px;
+}
+
+.Product{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    height: 75%;
+    width: 90%;
+}
+
+.Product img{
+    height: 100%;
+    width: 160px;
+
+}
+
+.ProductInfo{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.ProductName label{
+    font-size: 28px;
+}
+
+.ProductPrice label{
+    font-size: 40px;
+    font-weight: 600;
+}
+
+.SizeColQty{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+
+.SizeColQty label{
+    font-size: 20px
+}
+
+
+
+
+/* -------------------------------------------------------     Payment     --------------------------------------------------- */
+
+
+.PaymentContainer{
+    display: flex;
+    flex-direction: column;
+    height: 887px;
+    width: 510px;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    right: 190px;
+    top: 145px;
+    background: #FFFFFF;
+    border-radius: 8px;
+}
+
+.PaymentInfo{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 90%;
+    width: 81%;
+    position: relative;
+}
+
+.PaymentMethod{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.PaymentMethod label{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.PaymentMethod img{
+    height: 18px;
+    width: 11px;
+}
+
+.CashOrCard{
+    display: flex;
+    flex-direction: column;
+    height: 280px;
+    border-bottom: 10px solid #F5F5F5;
+    width: 100%;
+    gap: 20px;
+    position: relative;
+}
+
+.CardPayment{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 110px;
+    width: 100%;
+    border-radius: 10px;
+    border: 2px solid #000000;
+}
+
+.CardInfo{
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    width: auto;
+    gap: 10px;
+    top: 15px;
+    left: 30px;
+}
+
+.CardInfo label{
+    font-weight: 500;
+}
+
+.cardnumber{
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    width: auto;
+    bottom: 15px;
+    left: 30px;
+}
+
+.cardnumber label{
+    font-weight: 500;
+}
+
+.CashPayment{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 110px;
+    width: 100%;
+    border-radius: 10px;
+    border: 2px solid #000000;
+}
+
+.CashInfo{
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    width: auto;
+    gap: 10px;
+    top: 15px;
+    left: 30px;
+}
+
+.CashInfo label{
+    font-weight: 500;
+}
+
+.cashdesc{
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    width: auto;
+    bottom: 15px;
+    left: 30px;
+}
+
+.cashdesc label{
+    font-weight: 500;
+}
+
+.OrderSummary{
+    display: flex;
+    flex-direction: column;
+    height: 215px;
+    width: 100%;
+    gap: 20px;
+    border-bottom: 5px solid #FF9AA4;
+}
+
+.OrderSummary label{
+    font-size: 20px;
+    font-weight: 600;
+
+}
+
+.OrderSummaryInfo{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.OrderSummaryInfo label{
+   font-size: 18px;
+   font-weight: 500;
+}
+
+.Totalpayment{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 100%;
+    font-weight: 500;
+}
+
+.Totalpayment label{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.Placeorderbtn{
+    margin-top: 20px;
+    height: 61px;
+    width: 100%;
+    border: none;
+    border-radius: 15px;
+    color: #FFFFFF;
+    font-size: 17px;
+    font-weight: 500;
+    background: #E7003B;
+}
+
+
+
+/* -------------------------------------------------------     Footer     --------------------------------------------------- */
+
+.HomePageFooter{
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    height: 423px;
+    width: 100%;
+    background: #FF9AA4;
+
+
+}
+
+.Newsletter{
+    display: flex;
+    flex-direction: column;
+    height: 50%;
+    gap: 20px;
+    position: absolute;
+    left: 60px;
+    top: 80px;
+}
+
+.Newsletter label{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+#SubscribeInput{
+    height: 50px;
+    border-radius: 10px;
+    border: 1px solid #00000050;
+}
+
+.Subscibe{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 20px;
+}
+
+#SubscribeBtn{
+    background: #E7003B;
+    border-radius: 15px;
+    font-size: 14px;
+    font-weight: 500;
+    border: none;
+    color: #fff;
+    width: 200px;
+
+}
+
+.PlatformIcons{
+    display: flex;
+}
+.ServiceAndDetails{
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
+    position: absolute;
+    right:500px;
+    top: 80px;
+}
+
+.CustomerService{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.MoreDetails{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.FooterTitles{
+    font-size: 19px;
+    font-weight: 600;
+}
+
+.Copyright{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    position: absolute;
+    bottom: 10px;
+}
+
+.Copyright label{
+    font-size: 20px;
+    font-weight: 600;
+}

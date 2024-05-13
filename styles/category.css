@@ -1,0 +1,417 @@
+
+*,
+*::before,
+*::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+header{
+    position: fixed;
+    top: 0;
+    display: flex;
+    width: 100%;
+    z-index: 99;
+}
+
+.NavigationBar{
+    display: flex;
+    width: 100%;    
+    height: 75px;
+    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.25);
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 35px 0 35px;
+    background: #fff;
+}
+
+.NameLogo label{
+    font-weight: 700;
+}
+
+.NameLogo img{
+    height: 60px;
+    width: 60px;
+}
+
+#SearchInput{
+    width: 443px;
+    height: 40px;
+    outline: 1px solid #868383;
+    border-radius: 10px;
+}
+#SearchInput:focus, #SubscribeInput:focus {
+    border: 1px solid rgb(0, 0, 0);
+    box-shadow: none;
+}
+
+#HomePageSignUp{
+    border: 3px solid #E7003B;
+    background: rgba(231, 0, 59, 0.10);
+    color: #E7003B;
+}
+
+#HomePageLogIn{
+    background: linear-gradient(90deg, #E7003B 0%, #E7003B 100%);
+}
+
+.SearchContainer{
+    display: flex;
+    position: relative;
+    align-items: center;
+    height: 100%;
+}
+
+#SearchButton{
+    display: flex;
+    position: absolute;
+    cursor: pointer;
+    right: 20px;
+    height: 20px;
+    width: 20px;
+}
+
+.NavigationBarIcons{
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+.NavigationBarIcons img{
+    height: 25px;
+    width: 25px;
+    cursor: pointer;
+}
+
+
+@keyframes fade-in {
+    0%{
+        opacity: 0;
+        transform: translateY(20px) scale(0.9);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateY(0px) scale(1);
+    }
+}
+
+.LogSignBtn{
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    gap: 10px;
+    
+}
+
+.LogSignBtn button{
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+  
+}
+
+.AccountMenu{
+    display: none;
+    height: 466px;
+    width: 341px;
+    position: absolute;
+    justify-content: center;
+    background: #F5F5F5;
+    z-index: 100;
+    border-radius: 15px;
+    top: 90px;
+    right: 32px;
+    animation: fade-in 0.5s;
+}
+
+.AccountContainer{
+    display: flex;
+    height: 78px;
+    width: 284px;
+    background: #FFF;
+    border-radius: 15px;
+    justify-content: space-evenly;
+    align-items: center;
+    position: absolute;
+    top: 30px;
+}
+
+#UserLogInName{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+#UserFullname{
+    font-size: 14px;
+    font-weight: 500;
+    color: #898A8D;
+}
+
+.AccountContainer .UserContainer{
+    display: flex;
+    flex-direction: row;
+    gap: 18px;
+    width: 200px;
+}
+
+.AccountContainer #UserProfile{
+    border-radius: 100%;
+    height: 50px;
+    width: 50px;
+}
+
+.AccountContainer .UserName{
+    display: flex;
+    flex-direction: column;
+}
+
+.AccountContainer {
+   font-size: 38px;
+}
+
+
+.AccountContainer2{
+    display: flex;
+    flex-direction: column;
+    height: 188px;
+    gap: 30px;
+    width: 284px;
+    background: #FFF;
+    border-radius: 15px;
+    position: absolute;
+    bottom: 140px;
+    align-items: center;
+    justify-content: center;
+}
+
+.AccountContainer2 div{
+    display: flex;
+    flex-direction: row;
+    width: 233px;
+    gap: 20px;
+    font-size: 18px;
+    font-weight: 500;
+    align-items: center;
+}
+
+.AccountContainer2 div img{
+ height: 21px;
+ width: 24px;
+
+}
+
+#LogOutBtn{
+    background: #E7003B;
+    border-radius: 15px;
+    font-size: 16px;
+    border: none;
+    color: #fff;
+    height: 52px;
+    width: 284px;
+    display: flex;
+    position: absolute;
+    bottom: 20px;
+    justify-content: center;
+    align-items: center;
+}
+#LogOutBtn:hover {
+    background-color: #F12845;
+}
+
+/* -------------------------------------------------------     Main body   --------------------------------------------------- */
+
+.MainBody{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 1584px;
+    position: relative;
+    background: #FAFAFA;
+}
+
+
+/* -------------------------------------------------------     Image Ads    --------------------------------------------------- */
+
+.ImageAds{
+    display: flex;
+    position: absolute;
+    background-color: black;
+    height: 530px;
+    width: 1192px;
+    top: 90px;
+}
+
+
+/* -------------------------------------------------------     Category Category    --------------------------------------------------- */
+
+
+.CategoryProduct{
+    display: flex;
+    flex-direction: row;
+    height: 284px;
+    width: 1192px;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 550px;
+    gap: 60px;
+}
+
+.CategoryContainer{
+    height: 275px;
+    width: 190px;
+    border-radius: 20px;
+    flex-direction: row;
+    scroll-snap-align: start;
+    background: #FFF;
+    box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.25);
+
+}
+
+.CategoryImage{
+    display: flex;
+    height: 210px;
+    justify-content: center;
+
+}
+
+.CategoryIMG{
+    height: 173px;
+    width: 136px;
+    align-self: center;
+}
+
+.CategoryInfo{
+    display: flex;
+    flex-direction: row;
+    
+
+}
+
+.CategoryDetails{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    font-weight: 600;
+}
+
+.ClothesName{
+font-size:15px;
+}
+
+.CategoryButton button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    font-size: 16px;
+    font-weight: 800;
+    height: 32px;
+    width: 32px;
+    background: var(--secondary-color-cta, #E7003B);
+    border: #E7003B;
+}
+
+
+
+/* -------------------------------------------------------     Footer     --------------------------------------------------- */
+
+.HomePageFooter{
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    height: 423px;
+    width: 100%;
+    background: #FF9AA4;
+
+
+}
+
+.Newsletter{
+    display: flex;
+    flex-direction: column;
+    height: 50%;
+    gap: 20px;
+    position: absolute;
+    left: 60px;
+    top: 80px;
+}
+
+.Newsletter label{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+#SubscribeInput{
+    height: 50px;
+    border-radius: 10px;
+    border: 1px solid #00000050;
+}
+
+.Subscibe{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 20px;
+}
+
+#SubscribeBtn{
+    background: #E7003B;
+    border-radius: 15px;
+    font-size: 14px;
+    font-weight: 500;
+    border: none;
+    color: #fff;
+    width: 200px;
+
+}
+
+.PlatformIcons{
+    display: flex;
+}
+.ServiceAndDetails{
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
+    position: absolute;
+    right:500px;
+    top: 80px;
+}
+
+.CustomerService{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.MoreDetails{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.FooterTitles{
+    font-size: 19px;
+    font-weight: 600;
+}
+
+.Copyright{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    position: absolute;
+    bottom: 10px;
+}
+
+.Copyright label{
+    font-size: 20px;
+    font-weight: 600;
+}
