@@ -69,8 +69,8 @@
                 <div class="receiver rounded-4">
                     <h1 class="fw-semibold fs-3">Receiver</h1>
                     <div class="d-flex flex-row gap-5 mt-3">
-                        <p>Juan Cruz</p>
-                        <p>09123456789</p>
+                        <p class="fw-medium">Juan Cruz</p>
+                        <p class="fw-medium">09123456789</p>
                     </div>
                     <div class="location fw-semibold">
                         <p>Purok 1, 123 Albay, Santo Domingo, San Isidro</p>
@@ -84,6 +84,23 @@
                     <div class="trackingNumber d-flex mt-3 gap-3">
                         <h3 class="fw-bold fs-5">Tracking Number:</h3>
                         <a class="trackingNo fw-semibold" href="">12371984947108421</a>
+                    </div>
+                </div>
+                <div class="packages d-flex mt-4 gap-5">
+                    <div class="productImage">
+                        <h2 class="fw-bold fs-4 mb-4">Packages</h2>
+                        <img src="https://placehold.co/300x300/EEE/31343C" width="200" height="200" alt="Placehold" class="header-image">
+                    </div>
+                    <div class="productDetails d-flex flex-column mt-4">
+                        <div>
+                            <h2 class="fs-4 fw-semibold">Sleeves</h2>
+                        </div>
+                        <h2 class="fw-bold fs-2 my-4"> ₱799</h2>
+                        <div class="d-flex gap-4">
+                            <h3 class="fw-semibold fs-5">Size: </h3>
+                            <h3 class="fw-semibold fs-5">Color:</h3>
+                            <h3 class="fw-semibold fs-5">Qty: <span> 1</span></h3>
+                        </div>
                     </div>
                 </div>
             </div>

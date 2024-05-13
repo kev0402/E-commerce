@@ -228,7 +228,7 @@ header {
 main {
     margin-top: 10%;
 }
-.receiver, .deliveryPartner, .orderDetails {
+.receiver, .deliveryPartner, .orderDetails, .packages {
     padding: 2em;
     background-color: #fff;
 
