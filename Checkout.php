@@ -1,11 +1,9 @@
 <?php
-    include("./connection.php");
+include("./includes/database-con.php");
 session_start();
 // if (!isset($_SESSION['user'])) {
 //     header("Location: ./Login.php");
 // }
-
-
 
 ?>
 <!DOCTYPE html>
@@ -20,252 +18,152 @@ session_start();
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
-    <script src="./JS/jquery.min.js"></script>
-    <script src="./JS/bootstrap.js"></script>
-    <script src="./JS/bootstrap.min.js"></script>
+    <script src="./script/jquery.min.js"></script>
+    <script src="./bootstrap/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./CSS/bootstrap.css">
-    <link rel="stylesheet" href="./CSS/checkout.css">
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="./styles/checkout.css">
     <title>Checkout</title>
     <link rel="icon" href="./images/logo.png">
 </head>
-
 <body>
-
-<form action="" method="post" enctype="multipart/form-data">
-<div class="MainBody">
-    <header>
-        <div class="NavigationBar">
-            <div class="NameLogo">
-                <img src="./images/logo.png" alt="">
-                <label for="">JSK Store</label>
-            </div>
-            <div class="SearchContainer">
-                <input type="text" placeholder="Search..." class="form-control" id="SearchInput">
-                <i class="fa-solid fa-magnifying-glass" id="SearchButton"></i>
-            </div>
-            <div class="NavigationBarIcons">
-                <i class="fa-solid fa-bell fa-lg"></i>
-                <i class="fa-solid fa-cart-shopping fa-lg"></i>
-                <img src="./Image/AdsImage/account_circle.png" alt="" id="UserAccountCircle">
-            </div>
-        </div>
-        <div class="AccountMenu" id="AccountMenuModal">
-            <div class="AccountContainer">
-                <div class="UserContainer">
-                    <img src="./Image/Reviewer IMG/1641386961385.jpg" alt="" id="UserProfile">
-                    <div class="UserName">
-                        <label for="" id="UserLogInName">Mr. Pro</label>
-                        <label for="" id="UserFullname">The Goat</label>
+    <form action="" method="post" enctype="multipart/form-data">
+        <div class="MainBody">
+            <header>
+                <div class="NavigationBar">
+                    <div class="NameLogo">
+                        <img src="./images/logo.png" alt="">
+                        <label for="">JSK Store</label>
+                    </div>
+                    <div class="SearchContainer">
+                        <input type="text" placeholder="Search..." class="form-control" id="SearchInput">
+                        <i class="fa-solid fa-magnifying-glass" id="SearchButton"></i>
+                    </div>
+                    <div class="NavigationBarIcons">
+                        <i class="fa-solid fa-bell fa-lg"></i>
+                        <i class="fa-solid fa-cart-shopping fa-lg"></i>
+                        <img src="./Image/AdsImage/account_circle.png" alt="" id="UserAccountCircle">
                     </div>
                 </div>
-                <i class="fa-solid fa-chevron-right" id="UserEditAccount"></i>
-            </div>
-            <div class="AccountContainer2">
-                <div class="MyOrder">
-                    <i class="fa-solid fa-clock-rotate-left fa-lg"></i>
-                    <label for="" class="fw-semibold">My Orders</label>
+                <div class="AccountMenu" id="AccountMenuModal">
+                    <div class="AccountContainer">
+                        <div class="UserContainer">
+                            <img src="./Image/Reviewer IMG/1641386961385.jpg" alt="" id="UserProfile">
+                            <div class="UserName">
+                                <label for="" id="UserLogInName">Mr. Pro</label>
+                                <label for="" id="UserFullname">The Goat</label>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-chevron-right" id="UserEditAccount"></i>
+                    </div>
+                    <div class="AccountContainer2">
+                        <div class="MyOrder">
+                            <i class="fa-solid fa-clock-rotate-left fa-lg"></i>
+                            <label for="" class="fw-semibold">My Orders</label>
+                        </div>
+                        <div class="MyFavorites">
+                            <i class="fa-solid fa-heart fa-lg"></i>
+                            <label for="" class="fw-semibold">My Favorites</label>
+                        </div>
+                        <div class="Settings">
+                            <i class="fa-solid fa-gear fa-lg"></i>
+                            <label for="" class="fw-semibold">Settings</label>
+                        </div>
+                    </div>
+                    <button onclick="redirect()" id="LogOutBtn" class="fw-bold">Log Out</button>
+                    <script>
+                        function redirect() {
+                            window.location.href = "./includes/log-out.php";
+                        }
+                    </script>
                 </div>
-                <div class="MyFavorites">
-                    <i class="fa-solid fa-heart fa-lg"></i>
-                    <label for="" class="fw-semibold">My Favorites</label>
-                </div>
-                <div class="Settings">
-                    <i class="fa-solid fa-gear fa-lg"></i>
-                    <label for="" class="fw-semibold">Settings</label>
-                </div>
-            </div>
-            <button onclick="redirect()" id="LogOutBtn" class="fw-bold">Log Out</button>
-            <script>
-                function redirect() {
-                    window.location.href = "./includes/log-out.php";
-                }
-            </script>
-        </div>
-    </header>
-
-   
-    <div class="UserCheckoutInfo">
-
-                <label for="">Checkout</label>
-
+            </header>
+            <div class="UserCheckoutInfo">
+                <label for="" class="fw-bold">Checkout</label>
                 <div class="UserInfoContainer">
-
-                <button class="editbtn"><img src="./Image/checkout/edit.png" alt=""></button>
-
+                    <button class="editbtn"><i class="fa-regular fa-pen-to-square" style="color: #ffffff;"></i></button>
                     <div class="userInfo">
-
-                            <div class="NameNumber">
-
-                                <label for="">Juan</label>
-
-                                <label for="">09124671246</label>
-
-                            </div>
-
-                            <label for="" class="address">Purok 1, 123 Albay, Santo Domingo, San Isidro</label>
-
-                            <button class="HomeBtn">Home</button>
-
-                    </div>
-
-
-                </div>
-
-    </div>
-
-        <div class="PackagesCheckoutInfo">
-
-                <label for="">Packages</label>
-
-                <div class="PackageContainer">
-
-                    <div class="Product">
-
-                        <img src="./Image/Dashboard/AddProduct Image/" alt="">
-
-                        <div class="ProductInfo">
-
-                        <div class="ProductName">
-
-                        <label for="">Sleeves</label>
-
+                        <div class="NameNumber">
+                            <label for="">Juan Dela Cruz</label>
+                            <label for="">09124671246</label>
                         </div>
-
-                        
-                        <div class="ProductPrice">
-
-                        <label for="">₱799</label>
-
-                        </div>
-
-                            <div class="SizeColQty">
-
-                                <label for="">Size: L</label>
-
-                                <label for="">Color: Black</label>
-
-                                <label for="">Qty: 1</label>
-
-                            </div>
-
-                        </div>
-
-
+                        <label for="" class="address">Purok 1, 123 Albay, Santo Domingo, San Isidro</label>
+                        <button class="HomeBtn mt-2">Home</button>
                     </div>
-
-
-
-
                 </div>
-
-    </div>
-    
-
-
-    <div class="PaymentContainer">
-
-            <div class="PaymentInfo">
-
-                <div class="PaymentMethod">
-
-                    <label for="">PaymentMethod</label>
-
-                    <img src="./Image/checkout/arrow_forward_ios.png" alt="">
-
-                </div>
-
-                <div class="CashOrCard">
-
-                    <div class="CardPayment">
-
-                        <div class="CardInfo">
-
-                            <img src="./Image/checkout/Mastercard.png" alt="">
-
-                            <label for="">Credit/Debit Card</label>
-
-                        </div>
-
-                            <div class="cardnumber">
-
-                                    <label for="">**** **** **** 1234</label>
-
-                            </div>
-
-                    </div>
-
-                        <div class="CashPayment">
-
-                        <div class="CashInfo">
-
-                            <img src="./Image/checkout/payments.png" alt="">
-
-                            <label for="">Cash on Delivery</label>
-
-                        </div>
-
-                            <div class="cashdesc">
-
-                                    <label for="">Pay when you receive</label>
-
-                            </div>
-
-                    </div>
-
-
-                </div>
-
-
-                <div class="OrderSummary">
-
-                    <label for="">Order Summary</label>
-                    
-                    <div class="OrderSummaryInfo">
-
-                        <label for="">Subtotal(1 Items)</label>
-
-                        <label for="">₱799</label>
-
-                    </div>                   
-                    
-                    <div class="OrderSummaryInfo">
-
-                        <label for="">Vouchers</label>
-
-                        <label for=""><u>View Vouchers</u></label>
-
-                    </div>                   
-                    
-                    <div class="OrderSummaryInfo">
-
-                        <label for="">Shipping Fee</label>
-
-                        <label for="">₱0</label>
-
-                    </div>
-                    
-
-                </div>
-
-                <div class="Totalpayment">
-
-                    <label for="">Total (VAT Included):</label>
-
-                    <label for="">₱799</label>
-
-                </div>
-
-                <button class="Placeorderbtn">Place Order</button>
-                
-
             </div>
-
-    </div>
-
+            <div class="PackagesCheckoutInfo">
+                <label class = "fw-bold"for="">Packages</label>
+                <div class="PackageContainer">
+                    <div class="Product">
+                        <img src="./Image/Dashboard/AddProduct Image/" alt="">
+                        <div class="ProductInfo">
+                            <div class="ProductName">
+                                <label for="">Sleeves</label>
+                            </div>
+                            <div class="ProductPrice">
+                                <label for="">₱799</label>
+                            </div>
+                            <div class="SizeColQty">
+                                <label for="">Size: L</label>
+                                <label for="">Color: Black</label>
+                                <label for="">Qty: 1</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="PaymentContainer">
+                <div class="PaymentInfo">
+                    <div class="PaymentMethod">
+                        <label class="" for="">Payment Method</label>
+                        <img src="./Image/checkout/arrow_forward_ios.png" alt="">
+                    </div>
+                    <div class="CashOrCard">
+                        <div class="CardPayment">
+                            <div class="CardInfo">
+                                <img src="./Image/checkout/Mastercard.png" alt="">
+                                <label for="">Credit/Debit Card</label>
+                            </div>
+                            <div class="cardnumber">
+                                <label for="">**** **** **** 1234</label>
+                            </div>
+                        </div>
+                        <div class="CashPayment">
+                            <div class="CashInfo">
+                                <img src="./Image/checkout/payments.png" alt="">
+                                <label for="">Cash on Delivery</label>
+                            </div>
+                            <div class="cashdesc">
+                                <label for="">Pay when you receive</label>
+                            </div>
+                        </div>
+                        <hr>
+                    </div>
+                    <div class="OrderSummary">
+                        <label for="">Order Summary</label>
+                        <div class="OrderSummaryInfo">
+                            <label for="" class="fw-semibold">Subtotal (1 Items)</label>
+                            <label for="" class="fw-bold">₱799</label>
+                        </div>
+                        <div class="OrderSummaryInfo">
+                            <label class="fw-semibbold" for="">Vouchers</label>
+                            <label for=""><u>View Vouchers</u></label>
+                        </div>
+                        <div class="OrderSummaryInfo">
+                            <label class="fw-semibold" for="">Shipping Fee</label>
+                            <label for="" class="fw-bold">₱0</label>
+                        </div>
+                        <hr>
+                    </div>
+                    <div class="Totalpayment">
+                        <label class="fw-semibold" for="">Total (VAT Included):</label>
+                        <label class="fw-bold" for="">₱799</label>
+                    </div>
+                    <button class="Placeorderbtn mt-5">Place Order</button>
+                </div>
+            </div>
     </form>
-
-
     <div class="HomePageFooter">
         <div class="Newsletter">
             <label for="" class="fw-bold">Sign up our Newsletter</label>
@@ -300,7 +198,6 @@ session_start();
     </div>
 </body>
 
-<script src="./bootstrap/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="./script/HomePage.js"></script>
 
 </html>

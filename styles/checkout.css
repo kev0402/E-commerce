@@ -287,6 +287,7 @@ header{
     right: 33px;
     top: 27px;
     border: none;
+    cursor: pointer;
     background: #E7003B;
     border-radius: 10px;
 }
@@ -404,7 +405,7 @@ header{
 .PaymentContainer{
     display: flex;
     flex-direction: column;
-    height: 887px;
+    height: 840px;
     width: 510px;
     position: absolute;
     justify-content: center;
@@ -446,10 +447,13 @@ header{
     display: flex;
     flex-direction: column;
     height: 280px;
-    border-bottom: 10px solid #F5F5F5;
     width: 100%;
     gap: 20px;
     position: relative;
+}
+.CashOrCard hr {
+    border: 2px solid #adacac;
+    
 }
 
 .CardPayment{
@@ -532,7 +536,10 @@ header{
     height: 215px;
     width: 100%;
     gap: 20px;
-    border-bottom: 5px solid #FF9AA4;
+}
+.OrderSummary hr {
+    border: 3px solid #FF9AA4;
+    border-radius: 10px;
 }
 
 .OrderSummary label{
@@ -576,6 +583,9 @@ header{
     font-size: 17px;
     font-weight: 500;
     background: #E7003B;
+}
+.Placeorderbtn:hover {
+    background-color: #f12845;
 }
 
 

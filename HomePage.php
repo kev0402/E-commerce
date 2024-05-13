@@ -18,9 +18,7 @@ if(isset($_POST['PopularProduct'])){
 if(isset($_POST['NewArrivalBtn'])){
 
     $NewArrivalID = $_POST['NewArrivalBtn'];
-
     $_SESSION['ID'] = $NewArrivalID;
-
     header("Location: ./product.php");
     
 }
