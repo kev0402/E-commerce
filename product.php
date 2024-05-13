@@ -1,11 +1,11 @@
 <?php
-    include("./connection.php");
+    include("./includes/database-con.php");
 session_start();
 // if (!isset($_SESSION['user'])) {
 //     header("Location: ./Login.php");
 // }
 
-$ID =   $_SESSION['ID'];
+$ID = $_SESSION['ID'];
 
 if(isset($_POST['LogoBtn'])){
     header("Location: ./HomePage.php");
@@ -26,9 +26,9 @@ if(isset($_POST['LogoBtn'])){
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
     <script src="./script/jquery.min.js"></script>
     <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./CSS/product.css">
-    <link rel="icon" href="./images/logo.png">
+    <link rel="stylesheet" href="./styles/product.css">
     <title>Product</title>
+    <link rel="icon" href="./images/logo.png">
 </head>
 
 <body>
@@ -285,6 +285,6 @@ while ($row = mysqli_fetch_assoc($var)) {
     </footer>
 </form>
 </body>
-<script src="./JS/product.js"></script>
+<script src="./script/product.js"></script>
 
 </html>
