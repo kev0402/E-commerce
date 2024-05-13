@@ -50,8 +50,9 @@ if (isset($_POST['continueButton'])) {
 
         if ($prepareStmt) {
             mysqli_stmt_bind_param($stmt, "ss", $email, $passHash);
+            $_SESSION["user"];
             mysqli_stmt_execute($stmt);
-            header("Location: ./Login.php");
+            header("Location: ./Dashboard.php");
         }
     }
 }
