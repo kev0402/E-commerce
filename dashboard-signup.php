@@ -55,6 +55,7 @@ if (isset($_POST['signupButton'])) {
         if ($preparestmt) {
             mysqli_stmt_bind_param($stmt, "ss", $email, $pwd_hash);
             mysqli_stmt_execute($stmt);
+            header("Location: ./Dashboard.php");
         } else {
             die();
         }
@@ -95,7 +96,7 @@ if ($alert != null) {
                 <div class="mt-4">
                     <div class="mt-4">
                         <label for="email" class="mb-2 fw-semibold">Email</label>
-                        <input name="email" value="<?php echo $email ?>" type="text" class="emailField form-control shadow-none p-3 fw-medium" id="signupEmailField">
+                        <input name="email" type="text" class="emailField form-control shadow-none p-3 fw-medium" id="signupEmailField">
                     </div>
                     <div class="mt-4">
                         <label for="pass" class="mb-2 fw-semibold">Password</label>
@@ -116,8 +117,7 @@ if ($alert != null) {
             <img src="./images/blurry-gradient-haikei.png" alt="" style="height: 100vh; border-top-left-radius: .75rem; border-bottom-left-radius: .75rem;">
         </div>
     </main>
+    <script src="./script/dashboard_forms.js"></script>
+    <script src="./bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
-<script src="./script/dashboard_forms.js"></script>
-<script src="./bootstrap/js/bootstrap.bundle.min.js"></script>
-
 </html>

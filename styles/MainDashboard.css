@@ -4,8 +4,8 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'SF Pro Rounded Regular';
-    src: url("/Font/SF-Pro-Rounded-Regular.otf");
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-optical-sizing: auto;
 }
 
 .DashboardContainer{
